@@ -1,0 +1,19 @@
+:root{
+    background-color: #F5FBEF;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    border: 0.5px, solid, gray;
+    justify-content: center;
+}
+
+footer{
+    background-color: #041B15;
+    height: 120px;
+    color: #F5FBEF;
+}
