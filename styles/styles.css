@@ -8,8 +8,10 @@ body{
 }
 
 main{
+    
     display: flex;
     flex-direction: row;
+    padding: 20px;
 }
 
 header{
@@ -17,20 +19,44 @@ header{
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    /* border: 0.5px, solid, gray; */
-    box-shadow: 0px 10px 5px lightblue;
+    border-bottom: 1px solid #e5e5e5;
+    margin: 20px;
+}
+
+aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 30px;
+}
+
+.barraBusqueda{
+    width: 500px;
+    height: 25px;
+    border-radius: 10px;
+    border: 0.5px solid #e5e5e5;
 }
 
 .productosPrincipal{
 
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
 
 }
 
+.imgProductosPrincipal{
+
+    width: 400px;
+    height: 400px;
+}
+
 footer{
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
     background-color: #041B15;
-    height: 120px;
     color: #F5FBEF;
 }
 
@@ -39,6 +65,14 @@ footer{
     display: block;
 }
 
-li{
-    list-style-type: none;
+.listaFiltro{
+
+    margin: 20px;
+    padding: 0;
+
 }
+
+a{
+    text-decoration: none;
+}
+
