@@ -1,5 +1,6 @@
 :root{
     background-color: #F5FBEF;
+    font-family: "Instrument Sans", sans-serif;
 }
 
 body{
@@ -15,20 +16,54 @@ main{
 }
 
 header{
+    border-bottom: 1px solid #e5e5e5;
+}
+
+h1{
+    font-size: 50px;
+}
+
+.barraHeader{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    border-bottom: 1px solid #e5e5e5;
-    margin: 20px;
+    height: 170px;
+
 }
 
-aside{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 30px;
+.contenedorBienvenida{
+
+    margin: 70px;
 }
+
+.bordesSeparadores{
+
+    border-bottom: 1px solid #e5e5e5;
+
+}
+
+.textoBienvenida{
+
+    font-size: 1rem;
+    text-align: left;
+    line-height: 30px;
+    width: 50%;
+
+}
+
+
+.menuDesplegable{
+    display: none;
+    margin: 30px;
+    opacity: 0.7;
+    padding: 12px 16px;
+}
+
+.botonFiltro:hover .menuDesplegable{
+    display: block;
+
+} 
 
 .barraBusqueda{
     width: 500px;
@@ -52,8 +87,6 @@ aside{
 }
 
 footer{
-    position: absolute;
-    bottom: 0;
     height: 100px;
     width: 100%;
     background-color: #041B15;

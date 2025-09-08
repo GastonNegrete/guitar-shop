@@ -5,26 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Principal</title>
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header> 
-        <img src="./img/vecteezy_guitar-isolated-coloring-page-for-kids_8209197.jpg" alt="icono guitarra" width="100px" height="100px">
+        <div class="barraHeader">
+            <img src="./img/guitarra-logo.svg" alt="icono guitarra" width="200px" height="200px">
         <div>
             <input class="barraBusqueda" type="text" placeholder="Buscar producto">
-            <button>Buscar</button>
+            <a href=""><img src="./img/lupa.svg" alt="lupa busqueda" width="25px"></a>
         </div>
-        <a href="">Ir al carrito</a>
+        <a href=""><img src="./img/carrito.svg" alt="carrito de compras" width="30px" height="30px"></a>
+        </div>
     </header>
 
-    <h1>Guitar Shop</h1>
+    <div class="bordesSeparadores">
+        <div class="contenedorBienvenida">
+        <h1>Guitar Shop</h1>
+        <p class="textoBienvenida">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam reprehenderit, nulla provident modi 
+        laudantium magni saepe temporibus itaque labore, voluptatum natus consequatur. Fuga sapiente
+        doloremque nam reiciendis ipsum impedit quisquam.</p>
+    </div>
+    </div>
+
+    
     <main>
-        <aside>
-            <a href=""> Guitarras</a>
-            <a href=""> Amplificadores</a>
-            <a href=""> Pedales</a>
-            <a href=""> Accesorios</a>
-            <a href=""> Otros</a>
-        </aside>
+        <div>
+            <a class="botonFiltro" href="">Filtros</a>
+            <aside class="menuDesplegable">
+                <a href=""> Guitarras</a>
+                <a href=""> Amplificadores</a>
+                <a href=""> Pedales</a>
+                <a href=""> Accesorios</a>
+                <a href=""> Otros</a>
+            </aside>
+        </div>
         <section class="productosPrincipal">
             <div>
                 <p>Instrumento 1</p>
@@ -44,7 +61,7 @@
                 <a class="linkCarrito" href="">Agregar al carrito</a>
                 <p>$50000</p>
             </div>   
-              <div>
+            <div>
                 <p>Instrumento 4</p>
                 <img class="imgProductosPrincipal" src="./img/guitarra-de-clasica-valencia-outlet-vc-204-natural-satinada-exhibicion-.jpg" alt="producto">
                 <a class="linkCarrito" href="">Agregar al carrito</a>
