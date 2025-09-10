@@ -60,8 +60,17 @@ h1{
     padding: 12px 16px;
 }
 
-.botonFiltro:hover .menuDesplegable{
-    display: block;
+.botonFiltro{
+    padding: 10px;
+
+}
+
+.botonFiltro:hover{
+    
+    border: 1px solid #041B15;
+    border-radius: 20px;
+    color: #041B15;
+    
 
 } 
 
@@ -87,6 +96,8 @@ h1{
 }
 
 footer{
+    display: flex;
+    justify-content: space-between;
     height: 100px;
     width: 100%;
     background-color: #041B15;
@@ -109,3 +120,6 @@ a{
     text-decoration: none;
 }
 
+a:visited{
+    color: #041B15;
+}
