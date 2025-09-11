@@ -49,9 +49,7 @@ h1{
     text-align: left;
     line-height: 30px;
     width: 50%;
-
 }
-
 
 .menuDesplegable{
     display: none;
@@ -97,10 +95,42 @@ h1{
 
 footer{
     display: flex;
+    min-height: 25vh;
     justify-content: space-between;
     height: 100px;
     width: 100%;
     background-color: #041B15;
+    color: #F5FBEF;
+}
+
+.flexRRSS{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.imgLogosFooter{
+    width: 30px;
+    display: inline;
+}
+
+.contenedorLinksFooter{
+
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin: 50px;
+}
+
+.contenedorLogoFooter{
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.linksFooter:visited{
     color: #F5FBEF;
 }
 
