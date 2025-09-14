@@ -1,6 +1,7 @@
 :root{
-    background-color: #F5FBEF;
-    font-family: "Instrument Sans", sans-serif;
+    background-color: #E9E9E9;
+    font-family: "Inter Tight", sans-serif;
+    color: #222222;
 }
 
 body{
@@ -16,6 +17,7 @@ main{
 }
 
 header{
+    background-color: #DCDCDC;
     border-bottom: 1px solid #e5e5e5;
 }
 
@@ -28,8 +30,16 @@ h1{
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    height: 170px;
+    height: 80px;
 
+}
+
+.linksNav{
+    padding: 10px;
+}
+
+.linksNav:hover{
+    color: #2222226c;
 }
 
 .contenedorBienvenida{
@@ -73,7 +83,7 @@ h1{
 } 
 
 .barraBusqueda{
-    width: 500px;
+    width: 900px;
     height: 25px;
     border-radius: 10px;
     border: 0.5px solid #e5e5e5;
@@ -99,7 +109,7 @@ footer{
     justify-content: space-between;
     height: 100px;
     width: 100%;
-    background-color: #041B15;
+    background-color: #222;
     color: #F5FBEF;
 }
 
@@ -130,6 +140,10 @@ footer{
 
 }
 
+.linksFooter{
+    padding: 3px;
+}
+
 .linksFooter:visited{
     color: #F5FBEF;
 }
@@ -152,4 +166,19 @@ a{
 
 a:visited{
     color: #041B15;
+}
+
+/* Estilos Contacto */
+
+.flexContacto{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+form input{
+    width: 40rem;
+    height: 2rem;
+    border: 0.8px solid #e5e5e5;
 }
