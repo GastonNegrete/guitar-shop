@@ -9,10 +9,8 @@ body{
     padding: 0;
 }
 
-main{
-    
-    display: flex;
-    flex-direction: row;
+.principalInicio{
+
     padding: 20px;
 }
 
@@ -101,16 +99,24 @@ h1{
 
     width: 400px;
     height: 400px;
+    border-radius: 20px;
 }
 
 footer{
     display: flex;
-    min-height: 25vh;
+    min-height: 22vh;
     justify-content: space-between;
     height: 100px;
     width: 100%;
     background-color: #222;
-    color: #F5FBEF;
+    color: #E9E9E9;
+}
+
+.logoGuitarraFooter{
+
+    width: 250px;
+    margin-top: 30px;
+
 }
 
 .flexRRSS{
@@ -124,6 +130,7 @@ footer{
     width: 30px;
     display: inline;
 }
+
 
 .contenedorLinksFooter{
 
@@ -145,7 +152,7 @@ footer{
 }
 
 .linksFooter:visited{
-    color: #F5FBEF;
+    color: #E9E9E9;
 }
 
 .linkCarrito{
@@ -180,5 +187,70 @@ a:visited{
 form input{
     width: 40rem;
     height: 2rem;
-    border: 0.8px solid #e5e5e5;
+    border: 0.8px solid #E9E9E9;
+}
+
+/* Estilos Nosotros */
+
+.imgNosotrosTienda{
+
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.flexNosotrosCubos{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.seccionCubosNosotros{
+
+    margin: 40px;
+
+}
+
+.cuboNosotrosInfo{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 400px;
+    height: 400px;
+    background-color: #222;
+
+}
+
+.infoCubos{
+
+    color: #E9E9E9;
+    font-style: italic;
+    font-size: larger;
+    text-align: center;
+    font-weight: 300;
+}
+
+.imgProductosNosotros{
+
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.logoNosotros{
+
+    width: 50px;
+    margin-top: 30px;
+
+}
+
+.textoNosotros {
+    font-size: 1rem;
+    text-align: left;
+    line-height: 30px;
+    margin: 20px;
 }
