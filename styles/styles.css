@@ -1,5 +1,6 @@
 :root{
-    background-color: #E9E9E9;
+    --background-color-principal: #FFFFFF;
+    background-color: #FFFFFF;
     font-family: "Inter Tight", sans-serif;
     color: #222222;
 }
@@ -15,7 +16,7 @@ body{
 }
 
 header{
-    background-color: #DCDCDC;
+    background-color: #E9E9E9;
     border-bottom: 1px solid #e5e5e5;
 }
 
@@ -67,16 +68,16 @@ h1{
 }
 
 .botonFiltro{
+    margin: 20px;
     padding: 10px;
-
+    border: 1px solid #2222226c;
+    border-radius: 20px;
 }
 
 .botonFiltro:hover{
     
-    border: 1px solid #041B15;
-    border-radius: 20px;
-    color: #041B15;
-    
+    transition: .3s ease-in-out;
+    color: #2222226c;
 
 } 
 
@@ -91,7 +92,16 @@ h1{
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 10px;
+    gap: 20px;
+
+}
+
+.tarjetaProducto{
+
+    text-align: center;
+    background-color: var(--background-color-principal);
+    border: 1px solid #e5e5e5;
+    border-radius: 15px;
 
 }
 
@@ -102,14 +112,26 @@ h1{
     border-radius: 20px;
 }
 
+.tarjetaProducto:hover{
+
+    transition: .4s ease-in-out;
+    box-shadow: 10px 5px 15px #8b8b8b;
+
+}
+
 footer{
     display: flex;
     min-height: 22vh;
     justify-content: space-between;
-    height: 100px;
     width: 100%;
     background-color: #222;
     color: #E9E9E9;
+}
+
+.textoCopyright{
+
+    font-variant: small-caps;
+
 }
 
 .logoGuitarraFooter{
@@ -131,6 +153,67 @@ footer{
     display: inline;
 }
 
+
+/* Producto */
+
+.flexProductoIndividual{
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.imgProductoIndividual{
+
+    width: 600px;
+
+}
+
+.imgProductoDetalle{
+
+    width: 50%;
+    margin: 20px;
+
+}
+
+/* Carrito */
+
+.flexCarrito{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.tarjetaSinProducto{
+
+    text-align: center;
+    background-color: var(--background-color-principal);
+    border: 1px solid #e5e5e5;
+    border-radius: 15px;
+    height: 500px;
+    width: 40%;
+
+}
+
+.tarjetaTotal{
+
+    text-align: center;
+    background-color: var(--background-color-principal);
+    border: 1px solid #e5e5e5;
+    border-radius: 15px;
+    height: 200px;
+    width: 20%;
+    align-content: center;
+
+}
+
+.carritoTarjetaSinProducto{
+
+    width: 50px;
+    margin: 20px;
+
+}
 
 .contenedorLinksFooter{
 
@@ -184,10 +267,24 @@ a:visited{
     justify-content: space-around;
 }
 
-form input{
+.datosForm{
     width: 40rem;
     height: 2rem;
     border: 0.8px solid #E9E9E9;
+}
+
+.mensajeContacto{
+
+    width: 40rem;
+    height: 100px;
+    border: 0.8px solid #E9E9E9;
+
+}
+
+.botonEnviar{
+
+    margin: 45px 45px 45px 0;
+
 }
 
 /* Estilos Nosotros */

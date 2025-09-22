@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<body>
+    <header class="barraHeader"> 
+        <div>
+            <img src="./img/guitarra-logo.svg" alt="icono guitarra" width="120px" height="120px">
+        </div>
+        <div>
+            <a href="./index.html" class="linksNav">Inicio</a>
+            <a href="./nosotros.html" class="linksNav">Nosotros</a>
+            <a href="./contacto.html" class="linksNav">Contacto</a>
+        </div>    
+        <div>
+            <input class="barraBusqueda" type="text" placeholder="Buscar producto">
+            <a href=""><img src="./img/lupa.svg" alt="lupa busqueda" width="25px"></a>
+        </div>
+        <a href="./carrito.html"><img src="./img/carrito.svg" alt="carrito de compras" width="30px" height="30px"></a>
+        </div>
+    </header>
+
+    <div class="bordesSeparadores">
+        <div class="contenedorBienvenida">
+        <h1>Carrito de Compras</h1>
+        <p class="textoBienvenida">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam reprehenderit, nulla provident modi 
+        laudantium magni saepe temporibus itaque labore, voluptatum natus consequatur. Fuga sapiente
+        doloremque nam reiciendis ipsum impedit quisquam.</p>
+    </div>
+    </div>
+
+    <main class="principalInicio">
+        <div>
+            <aside class="menuDesplegable">
+                <a href=""> Guitarras</a>
+                <a href=""> Amplificadores</a>
+                <a href=""> Pedales</a>
+                <a href=""> Accesorios</a>
+                <a href=""> Otros</a>
+            </aside>
+        </div>
+        <section class="flexCarrito">
+            <div class="tarjetaSinProducto"> 
+                <img src="./img/carrito.svg" alt="carrito de compras" class="carritoTarjetaSinProducto">
+                <p>Todavia no hay productos en tu carrito...</p>
+                <a class="botonFiltro" href="./index.html">Ver Productos Destacados</a>
+            </div> 
+            <div class="tarjetaTotal"> 
+                <h3>Resumen de Compra</h3>
+                <p>Total: $0</p>
+                <a class="botonFiltro" href="./index.html">Terminar Compra</a>
+            </div>     
+        </section>
+
+    </main>
+    <footer>
+       <div class="contenedorLinksFooter">
+            <a href="" class="linksFooter">Nosotros</a>
+            <a href="" class="linksFooter">Contacto</a>
+            <a href="" class="linksFooter">Trabaja con Nosotros</a>
+       </div>
+       <div class="contenedorLogoFooter">
+            <img src="./img/logo-blanco.svg" alt="logo guitarra" class="logoGuitarraFooter">
+            <div class="flexRRSS">
+                <img class="imgLogosFooter" src="./img/logo-wsp.svg" alt="logo whatsapp">
+                <img class="imgLogosFooter" src="./img/logo-instagram.svg" alt="logo instagram">
+                <img class="imgLogosFooter" src="./img/logo-facebook.svg" alt="logo facebook" height="30px">
+                <img class="imgLogosFooter" src="./img/logo-youtube.svg" alt="logo logo-youtube">
+            </div>
+       </div>
+       <div class="contenedorLinksFooter">
+            <p class="textoCopyright">Guitar Shop © Derechos Reservados 2025</p>
+       </div>
+    </footer>
+</body>
+</html>

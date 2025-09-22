@@ -15,16 +15,15 @@
         </div>
         <div>
             <a href="./index.html" class="linksNav">Inicio</a>
-            <a href="" class="linksNav">Productos</a>
+            <a href="./producto.html" class="linksNav">Productos</a>
             <a href="./nosotros.html" class="linksNav">Nosotros</a>
-            <a href="" class="linksNav">FAQ</a>
         </div>    
         <div>
             <input class="barraBusqueda" type="text" placeholder="Buscar producto">
             <a href=""><img src="./img/lupa.svg" alt="lupa busqueda" width="25px"></a>
         </div>
         <div>
-            <a href=""><img src="./img/carrito.svg" alt="carrito de compras" width="30px" height="30px"></a>
+            <a href="./carrito.html"><img src="./img/carrito.svg" alt="carrito de compras" width="30px" height="30px"></a>
         </div>
     </header>
 
@@ -37,25 +36,34 @@
             <form action="" method="post">
                 <p>
                     <label for="name"></label>
-                    <input type="text" id="nombre" name="user_nombre" placeholder="Nombre"/>
+                    <input type="text" id="nombre" name="user_nombre" placeholder="Nombre" class="datosForm"/>
                 </p>
                 <p>
                     <label for="mail"></label>
-                    <input type="email" id="mail" name="user_email" placeholder="Email" />
+                    <input type="email" id="mail" name="user_email" placeholder="Email" class="datosForm"/>
                 </p>
                 <p>
                     <label for="telefono"></label>
-                    <input type="tel" id="telefono" name="user_telefono" placeholder="Telefono"/>
+                    <input type="tel" id="telefono" name="user_telefono" placeholder="Telefono" class="datosForm"/>
                 </p>
                 <p>
                     <label for="msg"></label>
-                    <textarea id="msg" name="user_message" placeholder="Mensaje"></textarea>
+                    <textarea id="msg" name="user_message" placeholder="Mensaje" class="mensajeContacto"></textarea>
                 </p>
-                <button>Enviar</button>
+                    <div>
+                        <h3>Motivo de Contacto</h3>
+                        <input type="radio" id="trabaja" name="Contacto" value="Trabaja">
+                        <label for="html">Trabaja con Nosotros</label><br>
+                        <input type="radio" id="productos" name="Contacto" value="Productos">
+                        <label for="css">Productos</label><br>
+                        <input type="radio" id="reclamo" name="Contacto" value="Productos">
+                        <label for="javascript">Reclamo</label>
+                    </div>
+                <button class="botonEnviar">Enviar</button>
             </form>
         </div>    
         <div>
-            <h1>Ubicacion</h1>
+            <h1>Ubicación</h1>
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13135.390770039077!2d-58.3873744!3d-34.6080127!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1ses-419!2sar!4v1757797164995!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </main>
@@ -75,9 +83,7 @@
             </div>
        </div>
        <div class="contenedorLinksFooter">
-            <a href="" class="linksFooter">Legales</a>
-            <a href="" class="linksFooter">Blog</a>
-            <a href="" class="linksFooter">Preguntas Frecuentes</a>
+            <p class="textoCopyright">Guitar Shop © Derechos Reservados 2025</p>
        </div>
     </footer>
 </body>
