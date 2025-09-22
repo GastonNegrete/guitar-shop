@@ -5,17 +5,8 @@
     color: #222222;
 }
 
-body{
-    margin: 0;
-    padding: 0;
-}
 
-.principalInicio{
-
-    padding: 20px;
-}
-
-
+/* Header */
 
 header{
     background-color: #E9E9E9;
@@ -35,6 +26,13 @@ h1{
 
 }
 
+.barraBusqueda{
+    width: 900px;
+    height: 25px;
+    border-radius: 10px;
+    border: 0.5px solid #e5e5e5;
+}
+
 .linksNav{
     padding: 10px;
 }
@@ -42,6 +40,24 @@ h1{
 .linksNav:hover{
     color: #2222226c;
 }
+
+.botonBusqueda{
+    height: 25px;
+
+}
+
+/* Index */
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.principalInicio{
+
+    padding: 20px;
+}
+
 
 .contenedorBienvenida{
 
@@ -59,7 +75,7 @@ h1{
     font-size: 1rem;
     text-align: left;
     line-height: 30px;
-    width: 50%;
+    width: 70%;
 }
 
 .menuDesplegable{
@@ -92,7 +108,6 @@ h1{
 
 
 .botonFiltro{
-    margin: 20px;
     padding: 10px;
     border: 1px solid #2222226c;
     border-radius: 20px;
@@ -105,11 +120,19 @@ h1{
 
 } 
 
-.barraBusqueda{
-    width: 900px;
-    height: 25px;
-    border-radius: 10px;
-    border: 0.5px solid #e5e5e5;
+.listaFiltro{
+
+    margin: 20px;
+    padding: 0;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: #041B15;
 }
 
 .productosPrincipal{
@@ -130,6 +153,13 @@ h1{
 
 }
 
+.linkCarrito:hover{
+
+    transition: .3s ease-in-out;
+    color: #2222226c;
+
+}
+
 .imgProductosPrincipal{
 
     width: 400px;
@@ -143,6 +173,215 @@ h1{
     box-shadow: 10px 5px 15px #8b8b8b;
 
 }
+
+/* Producto */
+
+.flexProductoIndividual{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.imgProductoIndividual{
+    width: 200px;
+}
+
+.imgProductoDetalle{
+    width: 50%;
+    margin: 20px;
+}
+
+.titulosProductoDetalle{
+
+    margin: 20px;
+
+}
+
+.flexTarjetaCompra{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.botonVerDescripcion{
+    text-decoration: underline;
+}
+
+.estiloTabla{
+
+    width: 50%;
+    border-radius: 15px;
+    margin: 20px;
+
+}
+
+td, th {
+  border: 1.5px solid #e5e5e5;
+  padding: 8px;
+}
+
+.parrafoDescripcionProducto{
+    width: 70%;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 27px;
+    margin: 20px;
+}
+
+
+/* Carrito */
+
+.listaInfoCarrito{
+    list-style-type: none;
+
+}
+
+.flexCarrito{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.tarjetaSinProducto{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color-principal);
+    border: 1px solid #e5e5e5;
+    border-radius: 15px;
+    height: 500px;
+    width: 40%;
+
+}
+
+.tarjetaTotal{
+
+    text-align: center;
+    background-color: var(--background-color-principal);
+    border: 1px solid #e5e5e5;
+    border-radius: 15px;
+    height: 200px;
+    width: 20%;
+    align-content: center;
+
+}
+
+.carritoTarjetaSinProducto{
+
+    width: 50px;
+    margin: 20px;
+
+}
+
+
+/* Contacto */
+
+.flexContacto{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.datosForm{
+    width: 40rem;
+    height: 2rem;
+    border: 0.8px solid #E9E9E9;
+}
+
+.mensajeContacto{
+
+    width: 40rem;
+    height: 100px;
+    border: 0.8px solid #E9E9E9;
+
+}
+
+.botonEnviar{
+
+    margin: 45px 45px 45px 0;
+
+}
+
+/* Nosotros */
+
+.imgNosotrosTienda{
+
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.botonNosotros{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+
+}
+
+.flexNosotrosCubos{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.seccionCubosNosotros{
+
+    margin: 40px;
+}
+
+.cuboNosotrosInfo{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 400px;
+    height: 400px;
+    background-color: #222;
+
+}
+
+.infoCubos{
+
+    color: #E9E9E9;
+    font-style: italic;
+    font-size: larger;
+    text-align: center;
+    font-weight: 300;
+    padding: 10px;
+}
+
+.imgProductosNosotros{
+
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.logoNosotros{
+
+    width: 50px;
+    margin-top: 30px;
+
+}
+
+.textoNosotros {
+    font-size: 1rem;
+    text-align: left;
+    line-height: 30px;
+    margin: 20px;
+}
+
+/* Footer */
 
 footer{
     display: flex;
@@ -179,88 +418,6 @@ footer{
 }
 
 
-/* Producto */
-
-.flexProductoIndividual{
-
-    display: flex;
-    justify-content: space-around;
-}
-
-.imgProductoIndividual{
-
-    width: 600px;
-
-}
-
-.imgProductoDetalle{
-
-    width: 50%;
-    margin: 20px;
-
-}
-
-.titulosProductoDetalle{
-
-    margin: 20px;
-
-}
-
-.estiloTabla{
-
-    width: 50%;
-    border: 1px solid #e5e5e5;
-    border-radius: 15px;
-    margin: 20px;
-
-}
-
-td, th {
-  border: 1px solid #e5e5e5;
-  padding: 8px;
-}
-
-
-/* Carrito */
-
-.flexCarrito{
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
-}
-
-.tarjetaSinProducto{
-
-    text-align: center;
-    background-color: var(--background-color-principal);
-    border: 1px solid #e5e5e5;
-    border-radius: 15px;
-    height: 500px;
-    width: 40%;
-
-}
-
-.tarjetaTotal{
-
-    text-align: center;
-    background-color: var(--background-color-principal);
-    border: 1px solid #e5e5e5;
-    border-radius: 15px;
-    height: 200px;
-    width: 20%;
-    align-content: center;
-
-}
-
-.carritoTarjetaSinProducto{
-
-    width: 50px;
-    margin: 20px;
-
-}
-
 .contenedorLinksFooter{
 
     display: flex;
@@ -284,116 +441,3 @@ td, th {
     color: #E9E9E9;
 }
 
-.linkCarrito{
-
-    display: block;
-}
-
-.listaFiltro{
-
-    margin: 20px;
-    padding: 0;
-
-}
-
-a{
-    text-decoration: none;
-}
-
-a:visited{
-    color: #041B15;
-}
-
-/* Estilos Contacto */
-
-.flexContacto{
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.datosForm{
-    width: 40rem;
-    height: 2rem;
-    border: 0.8px solid #E9E9E9;
-}
-
-.mensajeContacto{
-
-    width: 40rem;
-    height: 100px;
-    border: 0.8px solid #E9E9E9;
-
-}
-
-.botonEnviar{
-
-    margin: 45px 45px 45px 0;
-
-}
-
-/* Estilos Nosotros */
-
-.imgNosotrosTienda{
-
-    height: 500px;
-    width: 100%;
-    object-fit: cover;
-
-}
-
-.flexNosotrosCubos{
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.seccionCubosNosotros{
-
-    margin: 40px;
-
-}
-
-.cuboNosotrosInfo{
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 400px;
-    height: 400px;
-    background-color: #222;
-
-}
-
-.infoCubos{
-
-    color: #E9E9E9;
-    font-style: italic;
-    font-size: larger;
-    text-align: center;
-    font-weight: 300;
-}
-
-.imgProductosNosotros{
-
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
-}
-
-.logoNosotros{
-
-    width: 50px;
-    margin-top: 30px;
-
-}
-
-.textoNosotros {
-    font-size: 1rem;
-    text-align: left;
-    line-height: 30px;
-    margin: 20px;
-}

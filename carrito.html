@@ -14,12 +14,13 @@
         </div>
         <div>
             <a href="./index.html" class="linksNav">Inicio</a>
+            <a href="./producto.html" class="linksNav">Productos</a>
             <a href="./nosotros.html" class="linksNav">Nosotros</a>
             <a href="./contacto.html" class="linksNav">Contacto</a>
         </div>    
         <div>
             <input class="barraBusqueda" type="text" placeholder="Buscar producto">
-            <a href=""><img src="./img/lupa.svg" alt="lupa busqueda" width="25px"></a>
+            <button class="botonBusqueda">Buscar</button>
         </div>
         <a href="./carrito.html"><img src="./img/carrito.svg" alt="carrito de compras" width="30px" height="30px"></a>
         </div>
@@ -27,11 +28,16 @@
 
     <div class="bordesSeparadores">
         <div class="contenedorBienvenida">
-        <h1>Carrito de Compras</h1>
-        <p class="textoBienvenida">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam reprehenderit, nulla provident modi 
-        laudantium magni saepe temporibus itaque labore, voluptatum natus consequatur. Fuga sapiente
-        doloremque nam reiciendis ipsum impedit quisquam.</p>
-    </div>
+            <h1>Carrito de Compras</h1>
+            <p class="textoBienvenida">Revisá los productos en tu carrito antes de finalizar la compra. Podés modificar cantidades, 
+                eliminar artículos o seguir navegando para agregar más. Una vez que estés listo, hacé clic en “Finalizar compra” 
+                para ingresar tus datos y elegir el método de pago y envío.</p>
+            <ul class="listaInfoCarrito">
+                <li>💳 Aceptamos pagos seguros con tarjeta, transferencia o efectivo en el local.</li>
+                <li>🚚 Envíos a todo el país con seguimiento.</li>
+                <li>📍 Retiro sin cargo en nuestra tienda en CABA.</li>
+            </ul>
+        </div>
     </div>
 
     <main class="principalInicio">
@@ -48,21 +54,19 @@
             <div class="tarjetaSinProducto"> 
                     <img src="./img/carrito.svg" alt="carrito de compras" class="carritoTarjetaSinProducto">
                     <p>Todavia no hay productos en tu carrito...</p>
-                    <a class="botonFiltro" href="./index.html">Ver Productos Destacados</a>
+                    <a class="botonFiltro" href="./index.html">Ver Productos</a>
             </div> 
             <div class="tarjetaTotal"> 
                 <h3>Resumen de Compra</h3>
                 <p>Total: $0</p>
-                <a class="botonFiltro" href="./index.html">Terminar Compra</a>
+                <a class="botonFiltro" href="./index.html">Finalizar Compra</a>
             </div>     
         </section>
 
     </main>
     <footer>
        <div class="contenedorLinksFooter">
-            <a href="" class="linksFooter">Nosotros</a>
-            <a href="" class="linksFooter">Contacto</a>
-            <a href="" class="linksFooter">Trabaja con Nosotros</a>
+            <p class="textoCopyright">Av. Corrientes, C1035 Cdad. Autónoma de Buenos Aires</p>
        </div>
        <div class="contenedorLogoFooter">
             <img src="./img/logo-blanco.svg" alt="logo guitarra" class="logoGuitarraFooter">
