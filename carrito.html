@@ -10,20 +10,20 @@
 <body>
     <header class="barraHeader"> 
         <div>
-            <img src="./img/guitarra-logo.svg" alt="icono guitarra" width="120px" height="120px">
+            <img src="./img/logo-blanco.svg" alt="icono guitarra" class="logoHeader">
         </div>
-        <div>
+        <div class="menuNav">
             <a href="./index.html" class="linksNav">Inicio</a>
             <a href="./producto.html" class="linksNav">Productos</a>
             <a href="./nosotros.html" class="linksNav">Nosotros</a>
             <a href="./contacto.html" class="linksNav">Contacto</a>
+            <a href="" class="linksNav linkCarritoResp">Carrito</a>
         </div>    
         <div>
             <input class="barraBusqueda" type="text" placeholder="Buscar producto">
-            <button class="botonBusqueda">Buscar</button>
+            <a href=""><img src="./img/lupa.svg" alt="" class="lupaBusqueda"></a>
         </div>
-        <a href="./carrito.html"><img src="./img/carrito.svg" alt="carrito de compras" width="30px" height="30px"></a>
-        </div>
+        <a href="./carrito.html"><img src="./img/carrito.svg" alt="carrito de compras" class="carritoHeader"></a>
     </header>
 
     <div class="bordesSeparadores">
@@ -33,9 +33,9 @@
                 eliminar artículos o seguir navegando para agregar más. Una vez que estés listo, hacé clic en “Finalizar compra” 
                 para ingresar tus datos y elegir el método de pago y envío.</p>
             <ul class="listaInfoCarrito">
-                <li>💳 Aceptamos pagos seguros con tarjeta, transferencia o efectivo en el local.</li>
-                <li>🚚 Envíos a todo el país con seguimiento.</li>
-                <li>📍 Retiro sin cargo en nuestra tienda en CABA.</li>
+                <li>Aceptamos pagos seguros con tarjeta, transferencia o efectivo en el local.</li>
+                <li>Envíos a todo el país con seguimiento.</li>
+                <li>Retiro sin cargo en nuestra tienda en CABA.</li>
             </ul>
         </div>
     </div>
@@ -52,14 +52,14 @@
         </div>
         <section class="flexCarrito">
             <div class="tarjetaSinProducto"> 
-                    <img src="./img/carrito.svg" alt="carrito de compras" class="carritoTarjetaSinProducto">
+                    <img src="./img/carrito-negro.svg" alt="carrito de compras" class="carritoTarjetaSinProducto">
                     <p>Todavia no hay productos en tu carrito...</p>
-                    <a class="botonFiltro" href="./index.html">Ver Productos</a>
+                    <a class="botonGeneral" href="./index.html">Ver Productos</a>
             </div> 
             <div class="tarjetaTotal"> 
                 <h3>Resumen de Compra</h3>
                 <p>Total: $0</p>
-                <a class="botonFiltro" href="./index.html">Finalizar Compra</a>
+                <a class="botonGeneral" href="./index.html">Finalizar Compra</a>
             </div>     
         </section>
 

@@ -10,19 +10,20 @@
 <body>
     <header class="barraHeader"> 
         <div>
-            <img src="./img/guitarra-logo.svg" alt="icono guitarra" width="120px" height="120px">
+            <img src="./img/logo-blanco.svg" alt="icono guitarra" class="logoHeader">
         </div>
-        <div>
+        <div class="menuNav">
             <a href="./index.html" class="linksNav">Inicio</a>
             <a href="" class="linksNav">Productos</a>
             <a href="./nosotros.html" class="linksNav">Nosotros</a>
             <a href="./contacto.html" class="linksNav">Contacto</a>
+            <a href="./carrito.html" class="linksNav linkCarritoResp">Carrito</a>
         </div>    
         <div>
             <input class="barraBusqueda" type="text" placeholder="Buscar producto">
-            <button class="botonBusqueda">Buscar</button>
+            <a href=""><img src="./img/lupa.svg" alt="" class="lupaBusqueda"></a>
         </div>
-        <a href="./carrito.html"><img src="./img/carrito.svg" alt="carrito de compras" width="30px" height="30px"></a>
+        <a href="./carrito.html"><img src="./img/carrito.svg" alt="carrito de compras" class="carritoHeader"></a>
     </header>
     <main>
         <section class="flexProductoIndividual bordesSeparadores" >
@@ -31,11 +32,11 @@
             </div>
             <div class="flexTarjetaCompra">
                 <h2>Limited Edition Vintera® II Road Worn® '60s Telecaster®</h2>
-                <h3>$25000</h3>
+                <h2>$25000</h2>
                 <p>Hasta 6 cuotas sin interes</p>
                 <div>
-                    <a href="" class="botonFiltro">Compra Ahora</a>
-                    <a href="" class="botonFiltro">Agregar al carrito</a>
+                    <a href="" class="botonGeneral">Compra Ahora</a>
+                    <a href="" class="botonGeneral">Agregar al carrito</a>
                 </div>
                 <ul>
                     <li>Tipo de madera del cuerpo: Alamo.</li>
@@ -45,7 +46,9 @@
                     <li>Selector de micrófonos de 3 posiciones para variedad de sonidos.</li>
                     <li>Puente fijo de 6-Saddle con Block Steel Saddle para estabilidad en la afinación.</li>
                 </ul>
-                <a href="#Descripcion" class="botonVerDescripcion">Ver Descripcion</a>
+                <div>
+                    <a href="#Descripcion" class="botonGeneral">Ver Descripcion</a>
+                </div>
             </div>
         </section> 
         <section id="Caracteristicas" class="bordesSeparadores">
