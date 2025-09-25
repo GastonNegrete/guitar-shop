@@ -481,7 +481,228 @@ footer{
 }
 
 
-/* Media Queries */
+/* Media Queries Tablets */
+
+@media (max-width: 1024px) {
+
+    body{
+        text-align: center;
+    }
+}
+  
+
+/* Header */
+
+@media (max-width: 1024px) {
+    .barraHeader{
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+    }
+
+    .barraBusqueda{
+        width: 500px;
+    }
+
+    .menuNav{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .linkCarritoResp{
+        display: block;
+    }
+
+    .carritoHeader{
+        display: none;
+    }
+}
+
+/* Footer */
+
+@media (max-width: 1024px) {
+
+    footer{
+        display: flex;
+        flex-direction: column;
+        min-height: 22vh;
+        width: 100%;
+    }
+
+    .contenedorLinksFooter{
+        margin: 30px;
+    }
+
+    .logoGuitarraFooter {
+        align-self: center;
+        width: 300px;
+        margin: 0;
+    }
+
+    .flexRRSS{
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    .imgLogosFooter{
+        margin: 10px;
+        width: 40px;
+    }
+}
+
+/* Index */
+
+@media (max-width: 1024px) {
+    .principalInicio{
+        justify-items: center;
+    }
+
+    .productosPrincipal{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .textoBienvenida{
+        text-align: center;
+        width: 100%;
+    }
+
+    .contenedorFiltro{
+        display: block;
+    }
+
+    .menuDesplegable{
+
+        display: block;
+        position: relative;
+    }
+
+    .menuDesplegable a{
+        text-decoration: underline;
+        display: inline;
+    }
+
+
+    .filtroPrincipal{
+        display: none;
+    }
+
+    .tarjetaProducto{
+        width: 450px;
+        height: 500px;
+    }
+
+    .botonesTarjetaProducto a{
+        display: block;
+        margin: 10px;
+    }
+
+    .imgProductosPrincipal{
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Contacto*/
+
+@media (max-width: 1024px) {
+
+    .flexContacto{
+        flex-direction: column;
+    }
+
+    .datosForm{
+        width: 700px;
+    }
+
+    .mensajeContacto{
+        width: 700px;
+    }
+
+    .botonEnviar{
+        margin: 45px;
+        width: 100px;
+    }
+
+    iframe{
+        width: 750px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .imgNosotrosTienda{
+        height: 400px;
+        width: 100%;
+    }
+
+
+    .cuboNosotrosInfo{
+        width: 300px;
+    }
+
+    .imgProductosNosotros{
+        width: 300px;
+    }
+
+    .infoCubos{
+        font-size: medium;
+    }
+
+}
+
+@media (max-width: 1024px) {
+
+    .flexCarrito{
+        flex-direction: column;
+    }
+
+    .listaInfoCarrito{
+        padding: 20px;
+    }
+
+    .tarjetaSinProducto{
+        width: 600px;
+        margin-bottom: 30px;
+    }
+
+    .tarjetaTotal{
+        width: 600px;
+    }
+
+}
+
+@media (max-width: 1024px) {
+
+    .flexTarjetaCompra{
+        text-align: initial;
+    }
+
+    .estiloTabla{
+        width: 100%;
+        margin: 0;
+    }
+
+    .imgProductoDetalle{
+        width: 600px;
+    }
+
+    ul li{
+        margin: 20px;
+    }
+
+    .botonDescripcion{
+        width: 50px;
+    }
+
+   .parrafoDescripcionProducto{
+    width: auto;
+   }
+
+}
+
+
+/* Media Queries Smartphone */
 
 @media (max-width: 768px) {
 
@@ -720,3 +941,5 @@ footer{
    }
 
 }
+
+
