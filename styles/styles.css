@@ -16,7 +16,6 @@ header{
 
 header a{
     color: #E9E9E9;
-
 }
 
 header a:visited{
@@ -146,6 +145,7 @@ body{
     border: 1px solid #2222226c;
     border-radius: 20px;
     background-color: #FFFFFF;
+    color: #041B15;
 }
 
 .botonGeneral:hover{
