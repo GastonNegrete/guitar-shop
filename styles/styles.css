@@ -921,14 +921,19 @@ footer{
 
     .flexProductoIndividual{
         flex-direction: column-reverse;
+        margin: 20px;
     }
 
     .estiloTabla{
-        width: 90%;
+        width: 100%;
     }
 
     .imgProductoDetalle{
         width: 300px;
+    }
+
+    #Caracteristicas{
+        padding: 10px;
     }
 
     ul li{
