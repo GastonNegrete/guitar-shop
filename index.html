@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<script src="./app.js"></script>
 <body>
     <header class="barraHeader"> 
         <div>
@@ -20,7 +22,7 @@
             <a href="./carrito.html" class="linksNav linkCarritoResp">Carrito</a>
         </div>    
         <div>
-            <input class="barraBusqueda" type="text" placeholder="Buscar producto">
+            <input class="barraBusqueda" type="text" id="input-search-product" placeholder="Buscar producto">
             <a href=""><img src="./img/lupa.svg" alt="" class="lupaBusqueda"></a>
         </div>
         <a href="./carrito.html"><img src="./img/carrito.svg" alt="carrito de compras" class="carritoHeader"></a>
@@ -46,78 +48,7 @@
             </div>
         </div>
         <section class="productosPrincipal">
-            <div class="tarjetaProducto">
-                <h2>Fender Vintera II Telecaster</h2>
-                <img class="imgProductosPrincipal" src="./img/fender-vintera-ii-road-worn-60s-tele-mn-blonde.jpg" alt="producto">
-                <h3>$25000</h3>
-                <div class="botonesTarjetaProducto">
-                    <a class="linkCarrito botonGeneral" href="">Agregar al carrito</a>
-                    <a class="linkCarrito botonGeneral" href="./producto.html">Ver Producto</a>
-                </div>
-            </div>
-            <div class="tarjetaProducto">
-                <h2>Fender Vintera 60's Stratocaster</h2>
-                <img class="imgProductosPrincipal" src="./img/fender-vintera-ii-road-worn-60s-strat-rw-sbl.jpg" alt="producto">
-                <h3>$45000</h3>
-                <div class="botonesTarjetaProducto">
-                    <a class="linkCarrito botonGeneral" href="">Agregar al carrito</a>
-                    <a class="linkCarrito botonGeneral" href="./producto.html">Ver Producto</a>
-                </div>
-            </div>
-            <div class="tarjetaProducto">
-                <h2>Fender Vintera 50's Jazzmaster</h2>
-                <img class="imgProductosPrincipal" src="./img/fender-vintera-ii-road-worn-50s-jazzmaster-rw-frd.jpg" alt="producto">
-                <h3>$50000</h3>
-                <div class="botonesTarjetaProducto">
-                    <a class="linkCarrito botonGeneral" href="">Agregar al carrito</a>
-                    <a class="linkCarrito botonGeneral" href="./producto.html">Ver Producto</a>
-                </div>
-            </div>   
-            <div class="tarjetaProducto">
-                <h2>Epiphone Les Paul Custom</h2>
-                <img class="imgProductosPrincipal" src="./img/gibson-les-paul-custom-70s-eb.jpg" alt="producto">
-                <h3>$50000</h3>
-                <div class="botonesTarjetaProducto">
-                    <a class="linkCarrito botonGeneral" href="">Agregar al carrito</a>
-                    <a class="linkCarrito botonGeneral" href="./producto.html">Ver Producto</a>
-                </div>
-            </div>   
-            <div class="tarjetaProducto">
-                <h2>Gibson Les Paul Custom 70's</h2>
-                <img class="imgProductosPrincipal" src="./img/gibson-les-paul-custom-70s-eb.jpg" alt="producto">
-                <h3>$50000</h3>
-                <div class="botonesTarjetaProducto">
-                    <a class="linkCarrito botonGeneral" href="">Agregar al carrito</a>
-                    <a class="linkCarrito botonGeneral" href="./producto.html">Ver Producto</a>
-                </div>
-            </div>   
-            <div class="tarjetaProducto">
-                <h2>Gretsch Synchromatic Falcon</h2>
-                <img class="imgProductosPrincipal" src="./img/gretsch-synchromatic-falcon-hollow-sc-bigsby-eb-black.jpg" alt="producto">
-                <h3>$50000</h3>
-                <div class="botonesTarjetaProducto">
-                    <a class="linkCarrito botonGeneral" href="">Agregar al carrito</a>
-                    <a class="linkCarrito botonGeneral" href="./producto.html">Ver Producto</a>
-                </div>
-            </div>   
-            <div class="tarjetaProducto">
-                <h2>Yamaha Revstar RSS02T</h2>
-                <img class="imgProductosPrincipal" src="./img/yamaha-revstar-rss02t-fire-red.jpg" alt="producto">
-                <h3>$50000</h3>
-                <div class="botonesTarjetaProducto">
-                    <a class="linkCarrito botonGeneral" href="">Agregar al carrito</a>
-                    <a class="linkCarrito botonGeneral" href="./producto.html">Ver Producto</a>
-                </div>
-            </div>  
-            <div class="tarjetaProducto"> 
-                <h2>Ibanez JSM10EM-TTB</h2>
-                <img class="imgProductosPrincipal" src="./img/ibanez-jsm10em-ttb.jpg" alt="producto">
-                <h3>$50000</h3>
-                <div class="botonesTarjetaProducto">
-                    <a class="linkCarrito botonGeneral" href="">Agregar al carrito</a>
-                    <a class="linkCarrito botonGeneral" href="./producto.html">Ver Producto</a>
-                </div>
-            </div>   
+           <!-- Se agregan tarjetas de productos desde app.js -->
         </section>
 
     </main>
