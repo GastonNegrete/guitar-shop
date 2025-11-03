@@ -55,9 +55,17 @@ document.addEventListener('DOMContentLoaded', () => {
         newCartAnchor.setAttribute('href', './carrito.html');
         newCartAnchor.setAttribute('class', 'botonGeneral');
         newCartAnchor.innerText = 'Agregar al Carrito';
+        //Funcion para agregar al carrito (local storage)
+        newCartAnchor.addEventListener('click', (event) => {
+        event.preventDefault();
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        carrito.push(product);
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        })
 
         const newProductAnchor = document.createElement('a');
-        newProductAnchor.setAttribute('href', './producto.html');
+        //Armo la URL del producto obteniendo el ID de AirTable con el fetch que uso para recuperar los productos
+        newProductAnchor.setAttribute('href', `./producto.html?code=${encodeURIComponent(product.id)}`);
         newProductAnchor.setAttribute('class', 'botonGeneral');
         newProductAnchor.innerText = 'Ver Producto';
 
