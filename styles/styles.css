@@ -234,6 +234,10 @@ a:visited{
     margin: 20px;
 }
 
+.elementoLista{
+    margin-bottom: 10px;
+}
+
 .titulosProductoDetalle{
 
     margin: 20px;
@@ -951,4 +955,9 @@ footer{
 
 }
 
+/* ABM */
 
+.flexListaPrdDelete{
+    display: flex;
+    justify-content: space-around;
+}

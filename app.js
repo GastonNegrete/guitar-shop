@@ -1,12 +1,11 @@
-import { API_TOKEN, BASE_ID, TABLE_NAME } from "./env.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 
     //Info API
-    const api_token = API_TOKEN;
-    const base_id = BASE_ID;
-    const table_name= TABLE_NAME;
-    const API_URL = `https://api.airtable.com/v0/${base_id}/${table_name}`;
+    const API_TOKEN = 'patvj4vvgsHhiLs1m.c0c21acba723646db966d0a42231149185a5910124f0deea33c633dd362ea3a1';
+    const BASE_ID = 'appBo03PEB9uKUQf3';
+    const TABLE_NAME = 'Products';
+    const API_URL = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`;
 
     //Elementos DOM
     const productsDomElement = document.querySelector('.productosPrincipal'); //DIV Padre de tarjeta productos
@@ -107,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(API_URL, {
             method: 'GET',
             headers:{
-                'Authorization': `Bearer ${api_token}`,
+                'Authorization': `Bearer ${API_TOKEN}`,
                 'Content-Type': 'application/json' 
             }
         });
