@@ -7,73 +7,66 @@ document.addEventListener('DOMContentLoaded', () => {
     const API_URL = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`;
 
     const productsDomElement = document.querySelector('.listaProductosDelete');
+    
 
     //Funciones
 
     function renderProducts(products){
         productsDomElement.innerHTML = '';
         products.forEach(product => {
-        const newProduct = createProduct(product);
-        productsDomElement.appendChild(newProduct);
+        const newProductTable = crearTablaEliminar(product);
+        productsDomElement.appendChild(newProductTable);
     })}
 
-    function createProduct(product){
-        //Creo Tarjeta Producto
-        const newProduct = document.createElement('div');
-        newProduct.setAttribute('class', 'flexListaPrdDelete')
 
-        const productName = document.createElement('p');
-        productName.innerText = product.name;
-    
-       // const newImg = document.createElement('img');
-       // newImg.setAttribute('src', product.img);
-       // newImg.setAttribute('class', 'imgProductosPrincipal');
-       // newImg.setAttribute('alt', product.name);
+    function crearTablaEliminar(product) {
 
-        const productPrice = document.createElement('p');
-        productPrice.innerText =  `$ ${product.price}`;
+        const newProductTable = document.createElement('table');
+        newProductTable.setAttribute('class', 'tablaEliminar');
+        //TD tabla
+        const etiquetas = ["Producto", "Precio", "Categoria", "Marca", "Modelo", "Color",  "Cantidad"];
 
-        const productCategory = document.createElement('p');
-        productCategory.innerText =  product.category;
+        const encabezadosTabla = document.createElement('tr');
+        etiquetas.forEach(etiqueta => {
+            const th = document.createElement('th');
+            th.textContent = etiqueta;
+            encabezadosTabla.appendChild(th);
+        });
+        newProductTable.appendChild(encabezadosTabla);
 
-        const productMarca = document.createElement('p');
-        productMarca.innerText =  product.marca;
+        const filaProducto = document.createElement('tr');
+        const valores = [
+            product.name,
+            product.price,
+            product.category,
+            product.marca,
+            product.modelo,
+            product.color,
+            product.qty
+        ];
+        valores.forEach(detalle => {
+            const td = document.createElement('td');
+            td.textContent = detalle;
+            filaProducto.appendChild(td);
+        });
 
-        const productModelo = document.createElement('p');
-        productModelo.innerText =  product.modelo;
+        const btnTd = document.createElement('td');
+        const btnEliminar = document.createElement('button');
+        btnEliminar.setAttribute('id', 'btnEliminar');
+        btnEliminar.textContent = 'Eliminar';
+        btnTd.appendChild(btnEliminar);
+        filaProducto.appendChild(btnTd);
+        //Evento para eliminar producto
+        btnEliminar.onclick = () => deleteProductsFromAirTable(product.id); 
 
-        const productColor = document.createElement('p');
-        productColor.innerText =  product.color;
+        newProductTable.appendChild(filaProducto);
 
-        const productqty = document.createElement('p');
-        productqty.innerText =  product.qty;
-
-        const newDeleteButton = document.createElement('button');
-        newDeleteButton.setAttribute('class', 'botonGeneral');
-        newDeleteButton.innerText = 'Eliminar Producto';
-
-
-        newProduct.appendChild(productName);
-        //newProduct.appendChild(newImg);
-        newProduct.appendChild(productPrice);
-        newProduct.appendChild(productCategory);
-        newProduct.appendChild(productMarca);
-        newProduct.appendChild(productModelo);
-        newProduct.appendChild(productColor);
-        newProduct.appendChild(productqty);
-        newProduct.appendChild(newDeleteButton);
-
-        return newProduct;
+        return newProductTable;
     }
 
-//document.querySelector('.botonEnviar').addEventListener('click', function(e) {
-//    e.preventDefault();
-//    agregarProductoNuevo();
-//});
 
 //Obtengo productos de AirTable
     async function getProductsFromAirTable() {
-     
         try {
             // Con GET y credenciales obtengo prds de base 
             const response = await fetch(API_URL, {
@@ -109,7 +102,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function getProductFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('code');
+    }
+
+    async function deleteProductsFromAirTable(codigoProducto) {
+     
+        try {
+            // Con GET y credenciales obtengo prds de base 
+            const response = await fetch(`${API_URL}/${codigoProducto}`, {
+            method: 'DELETE',
+            headers:{
+                'Authorization': `Bearer ${API_TOKEN}`,
+                'Content-Type': 'application/json' 
+            }
+        });
+
+        const data = await response.json();
+        console.log('Producto eliminado', data); 
+        getProductsFromAirTable();
+
+        } catch (error) {
+            console.log('Error al intentar eliminar producto de Air Table.')
+        }
+    }
+
     getProductsFromAirTable();
 
-
+    
 })
