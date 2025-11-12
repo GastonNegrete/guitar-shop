@@ -1,10 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    //Info API
-    const API_TOKEN = 'patvj4vvgsHhiLs1m.c0c21acba723646db966d0a42231149185a5910124f0deea33c633dd362ea3a1';
-    const BASE_ID = 'appBo03PEB9uKUQf3';
-    const TABLE_NAME = 'Products';
-    const API_URL = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`;
+    const btnEnviarForm = document.getElementsByClassName('botonEnviar');
 
     const main = document.querySelector('main');
 
@@ -30,5 +26,20 @@ document.addEventListener('DOMContentLoaded', () => {
         return newDivForm;
     }
 
+    btnEnviarForm.addEventListener('click', (event) => {
+        event.preventDefault();
+        const datosFormulario = JSON.parse(localStorage.getItem('datosFormulario')) || [];
+        //Datos de cliente que guardo
+        const objetoForm = {
+            nombre: document.getElementById('nombre').value,
+            email: document.getElementById('mail').value,
+            telefono: document.getElementById('telefono').value,
+            mensaje: document.getElementById('msg').value,
+            motivo: document.querySelector('input[name="Contacto"]:checked')?.value || ''
+            };
+
+        datosFormulario.push(objetoForm);
+        localStorage.setItem('datosFormulario', JSON.stringify(datosFormulario));
+        })
 
 })

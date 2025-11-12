@@ -313,6 +313,13 @@ td, th {
 
 }
 
+.compraResumenTarjeta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
 .carritoTarjetaSinProducto{
 
     width: 50px;
@@ -966,4 +973,12 @@ footer{
     width: 100%;
     table-layout: fixed;
     margin-bottom: 10px;
+   }
+
+   .infoqty{
+        font-weight: 500;
+   }
+
+   #cantidadSelect{
+        margin-bottom: 20px;
    }

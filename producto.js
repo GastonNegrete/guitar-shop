@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             img1: data.fields.Img1,
             img2: data.fields.Img2,
             img3: data.fields.Img3,
+            qty: data.fields.qty,
             descripcion: data.fields.Descripcion,
             datosTabla: [data.fields.Marca, 
                          data.fields.Modelo, 
@@ -97,8 +98,17 @@ document.addEventListener('DOMContentLoaded', () => {
         //Funcion para agregar al carrito (local storage)
         newCartAnchorInd.addEventListener('click', (event) => {
         event.preventDefault();
+        const qtyPRD = parseInt(document.getElementById('cantidadSelect').value);
         const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-        carrito.push(product);
+        //Datos que voy a mostrar en carrito
+        const objetoCarrito = {
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                img: product.img,
+                cantidad: qtyPRD
+            };
+        carrito.push(objetoCarrito);
         localStorage.setItem('carrito', JSON.stringify(carrito));
         })
 
@@ -120,7 +130,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const newElementListProduct4 = document.createElement('li');
         newElementListProduct4.setAttribute('class','elementoLista')
         newElementListProduct4.innerText = 'Producto con garantia de fabrica.';
-        //
+
+        const newElementQtyEtiqueta = document.createElement('p');
+        newElementQtyEtiqueta.setAttribute('class','infoqty')
+        newElementQtyEtiqueta.innerText = `Cantidad: `;
+
+        const newElementQty = document.createElement('p');
+        newElementQty.setAttribute('class','infoqty')
+        newElementQty.innerText = `${product.qty} disponibles`;
     
         newProductInd.appendChild(newImgInd);
         newProductInd.appendChild(newProductCardDiv);
@@ -133,6 +150,30 @@ document.addEventListener('DOMContentLoaded', () => {
         newUListProduct.appendChild(newElementListProduct2);
         newUListProduct.appendChild(newElementListProduct3);
         newUListProduct.appendChild(newElementListProduct4);
+
+        //Manejo cantidades
+
+        newProductCardDiv.appendChild(newElementQty);
+
+        if (product.qty > 0) {
+        const labelQty = document.createElement('label');
+        labelQty.setAttribute('for', 'cantidad');
+        labelQty.textContent = 'Cantidad:';
+
+        const selectQty = document.createElement('select');
+        selectQty.id = 'cantidadSelect';
+        selectQty.name = 'cantidad';
+
+        for (let i = 1; i <= product.qty; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = `${i}`;
+            selectQty.appendChild(option);
+        }
+
+        newProductCardDiv.appendChild(labelQty);
+        newProductCardDiv.appendChild(selectQty);
+        }
         
         //Flex botones
         newProductCardDiv.appendChild(newProductButtonDivInd);
@@ -164,11 +205,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Iterar sobre los datos de la fila
             const th = document.createElement('th');
             th.textContent = etiqueta[i];
-            // Crear una celda
+
             const td = document.createElement('td');
-            // Añadir el contenido a la celda
             td.textContent = producto;
-            // Añadir la celda a la fila
+            
             tr.appendChild(th);
             tr.appendChild(td);
             // Agrego fila
