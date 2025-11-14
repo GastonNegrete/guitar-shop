@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+<script type="module" src="./contacto.js"></script>
 <body>
      <header class="barraHeader"> 
         <div>
@@ -31,34 +32,34 @@
         <div class="contenedorBienvenida">
     </div>
     <main class="flexContacto">
-        <div>
+        <div class="formularioContacto">
             <h1>Contactanos</h1>
             <form action="" method="">
-                <p>
-                    <label for="name"></label>
-                    <input type="text" id="nombre" name="user_nombre" placeholder="Nombre" class="datosForm"/>
-                </p>
-                <p>
+                <div class="inputForm">
+                    <label for="nombre"></label>
+                    <input type="text" id="nombre" name="user_nombre" placeholder="Nombre" class="datosForm" required/>
+                </div>
+                <div class="inputForm">
                     <label for="mail"></label>
-                    <input type="email" id="mail" name="user_email" placeholder="Email" class="datosForm"/>
-                </p>
-                <p>
+                    <input type="email" id="mail" name="user_email" placeholder="Email" class="datosForm" required/>
+                </div>
+                <div class="inputForm">
                     <label for="telefono"></label>
-                    <input type="tel" id="telefono" name="user_telefono" placeholder="Telefono" class="datosForm"/>
-                </p>
-                <p>
+                    <input type="number" id="telefono" name="user_telefono" placeholder="Telefono" class="datosForm" required/>
+                </div>
+                <div class="inputForm">
                     <label for="msg"></label>
-                    <textarea id="msg" name="user_message" placeholder="Mensaje" class="mensajeContacto"></textarea>
-                </p>
-                    <div>
-                        <h3>Motivo de Contacto</h3>
-                        <input type="radio" id="trabaja" name="Motivo" value="Trabaja">
-                        <label for="html">Trabaja con Nosotros</label><br>
-                        <input type="radio" id="productos" name="Motivo" value="Productos">
-                        <label for="css">Productos</label><br>
-                        <input type="radio" id="reclamo" name="Motivo" value="Productos">
-                        <label for="javascript">Reclamo</label>
-                    </div>
+                    <textarea id="msg" name="user_message" placeholder="Mensaje" class="mensajeContacto" required></textarea>
+                </div>
+                <div>
+                    <h3>Motivo de Contacto</h3>
+                    <input type="radio" id="trabaja" name="Motivo" value="Trabaja">
+                    <label for="trabaja">Trabaja con Nosotros</label><br>
+                    <input type="radio" id="productos" name="Motivo" value="Productos">
+                    <label for="productos">Productos</label><br>
+                    <input type="radio" id="reclamo" name="Motivo" value="Reclamo">
+                    <label for="reclamo">Reclamo</label>
+                </div>
                 <button class="botonEnviar">Enviar</button>
             </form>
         </div>    

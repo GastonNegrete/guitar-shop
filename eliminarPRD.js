@@ -19,50 +19,42 @@ document.addEventListener('DOMContentLoaded', () => {
     })}
 
 
-    function crearTablaEliminar(product) {
+function crearTablaEliminar(products) {
+    const newProductTable = document.createElement('table');
+    newProductTable.setAttribute('class', 'tablaEliminar');
 
-        const newProductTable = document.createElement('table');
-        newProductTable.setAttribute('class', 'tablaEliminar');
-        //TD tabla
-        const etiquetas = ["Producto", "Precio", "Categoria", "Marca", "Modelo", "Color",  "Cantidad"];
+    const etiquetas = ["Producto", "Precio", "Categoría", "Marca", "Modelo", "Color", "Cantidad", "Eliminar"];
+    const tituloFila = document.createElement('tr');
+    etiquetas.forEach(etiqueta => {
+        const th = document.createElement('th');
+        th.textContent = etiqueta;
+        tituloFila.appendChild(th);
+    });
+    newProductTable.appendChild(tituloFila);
 
-        const encabezadosTabla = document.createElement('tr');
-        etiquetas.forEach(etiqueta => {
-            const th = document.createElement('th');
-            th.textContent = etiqueta;
-            encabezadosTabla.appendChild(th);
-        });
-        newProductTable.appendChild(encabezadosTabla);
-
-        const filaProducto = document.createElement('tr');
-        const valores = [
-            product.name,
-            product.price,
-            product.category,
-            product.marca,
-            product.modelo,
-            product.color,
-            product.qty
-        ];
-        valores.forEach(detalle => {
+    products.forEach(product => {
+        const fila = document.createElement('tr');
+        const valores = [product.name, product.price, product.category, product.marca, product.modelo, product.color, product.qty];
+        valores.forEach(valor => {
             const td = document.createElement('td');
-            td.textContent = detalle;
-            filaProducto.appendChild(td);
+            td.textContent = valor;
+            fila.appendChild(td);
         });
 
         const btnTd = document.createElement('td');
         const btnEliminar = document.createElement('button');
         btnEliminar.setAttribute('id', 'btnEliminar');
         btnEliminar.textContent = 'Eliminar';
+        btnEliminar.onclick = () => deleteProductsFromAirTable(product.id);
         btnTd.appendChild(btnEliminar);
-        filaProducto.appendChild(btnTd);
-        //Evento para eliminar producto
-        btnEliminar.onclick = () => deleteProductsFromAirTable(product.id); 
+        fila.appendChild(btnTd);
 
-        newProductTable.appendChild(filaProducto);
+        newProductTable.appendChild(fila);
+    });
 
-        return newProductTable;
-    }
+    return newProductTable;
+}
+
 
 
 //Obtengo productos de AirTable

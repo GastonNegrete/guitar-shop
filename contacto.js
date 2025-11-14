@@ -1,32 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const btnEnviarForm = document.getElementsByClassName('botonEnviar');
-
-    const main = document.querySelector('main');
-
-    const newDivForm = document.createElement('div');
-
-    const newTitleForm = document.createElement('h1');
-    newTitleForm.innerText = 'Contactanos';
-
-    const newForm = document.createElement('form');
-
-    function crearSeccionForm(){
-
-        const newDivForm = document.createElement('div');
-        const newTitleForm = document.createElement('h1');
-        newTitleForm.innerText = 'Contactanos';
-
-        const newForm = document.createElement('form');
-
-        const newPName = document.createElement('p');
-
-        
-
-        return newDivForm;
-    }
-
-    btnEnviarForm.addEventListener('click', (event) => {
+    const formulario = document.querySelector("form");
+    const formButton = document.querySelector(".botonEnviar");
+    
+    formButton.addEventListener('click', (event) => {
         event.preventDefault();
         const datosFormulario = JSON.parse(localStorage.getItem('datosFormulario')) || [];
         //Datos de cliente que guardo
@@ -35,11 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
             email: document.getElementById('mail').value,
             telefono: document.getElementById('telefono').value,
             mensaje: document.getElementById('msg').value,
-            motivo: document.querySelector('input[name="Contacto"]:checked')?.value || ''
+            motivo: document.querySelector('input[name="Motivo"]:checked')?.value || ''
             };
 
         datosFormulario.push(objetoForm);
+        console.log("Formulario guardado:", datosFormulario);
         localStorage.setItem('datosFormulario', JSON.stringify(datosFormulario));
-        })
+        formulario.reset();
+    })
 
 })

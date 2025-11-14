@@ -11,21 +11,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Funciones
 
-    function renderProducts(products){
+    function renderProducts(products) {
         productsDomElement.innerHTML = '';
-        products.forEach(product => {
-        const newProductTable = crearTablaModificar(product);
-        productsDomElement.appendChild(newProductTable);
-    })}
+        const tablaProd = crearTablaModificarEliminar(products);
+        productsDomElement.appendChild(tablaProd);
+    }
 
 
-    function crearTablaModificar(product) {
+    function crearTablaModificarEliminar(products){
 
         const newProductTable = document.createElement('table');
         newProductTable.setAttribute('class', 'tablaEliminar');
         //TD tabla
         const etiquetas = ["Producto", "Precio", "Categoria", "Marca", "Modelo", "Color",  "Cantidad"];
-
         const encabezadosTabla = document.createElement('tr');
         etiquetas.forEach(etiqueta => {
             const th = document.createElement('th');
@@ -34,19 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         newProductTable.appendChild(encabezadosTabla);
 
+        products.forEach(product => {
         const filaProducto = document.createElement('tr');
-        const valores = [
-            product.name,
-            product.price,
-            product.category,
-            product.marca,
-            product.modelo,
-            product.color,
-            product.qty
-        ];
-        valores.forEach(detalle => {
+        const valores = [product.name, product.price, product.category, product.marca, product.modelo, product.color, product.qty];
+        valores.forEach(val => {
             const td = document.createElement('td');
-            td.textContent = detalle;
+            td.textContent = val || '-';
             filaProducto.appendChild(td);
         });
 
@@ -71,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnEliminar.onclick = () => deleteProductsFromAirTable(product.id); 
      
         newProductTable.appendChild(filaProducto);
+    });
 
         return newProductTable;
     }

@@ -343,6 +343,10 @@ td, th {
     border: 0.8px solid #E9E9E9;
 }
 
+.inputForm{
+    margin-bottom: 20px;
+}
+
 .mensajeContacto{
 
     width: 40rem;
