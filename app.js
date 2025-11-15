@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputSearch = document.getElementById('input-search-product');
     const categoryFilter = document.querySelectorAll('.opcionesFiltro');
 
+    // Lista para usar filtros
+    let listProducts = [];
+
     //Funciones
 
     function renderProducts(products){
@@ -111,6 +114,17 @@ document.addEventListener('DOMContentLoaded', () => {
             category: item.fields.Category,
             img: item.fields.Img
         }))
+
+        //Lista para usar filtros por categoria
+
+        listProducts = data.records.map(item => ({
+            id: item.id,
+            name: item.fields.Name,
+            price: item.fields.Price,
+            category: item.fields.Category,
+            img: item.fields.Img
+        }));
+
          
         // Con la funcion que tenia muestro los prods en pantalla
         renderProducts(mappedProducts);

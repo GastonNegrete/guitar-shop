@@ -108,7 +108,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 img: product.img,
                 cantidad: qtyPRD
             };
-        carrito.push(objetoCarrito);
+
+        // Busco si ya esta en carrito recorriendo la lista por id
+        const indice = carrito.findIndex(p => p.id === objetoCarrito.id);
+        if (indice !== -1){
+            carrito[indice].cantidad += objetoCarrito.cantidad;
+        }else{
+            carrito.push(objetoCarrito);
+        }
+
+
         localStorage.setItem('carrito', JSON.stringify(carrito));
         })
 

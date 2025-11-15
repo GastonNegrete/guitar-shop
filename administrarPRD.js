@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tituloMain = document.createElement('h1');
     tituloMain.innerHTML = 'Administrar Productos';
     const agregarBtn = document.createElement('button');
+    agregarBtn.setAttribute('class', 'btnAgregarAdmin"');
     agregarBtn.innerHTML = 'Agregar Producto';
     agregarBtn.setAttribute('onclick', 'window.location.href="./agregarPRD.html"');
 

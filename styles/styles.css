@@ -986,3 +986,11 @@ footer{
    #cantidadSelect{
         margin-bottom: 20px;
    }
+
+   .imgCarritoPrd{
+    width: 80px;
+   }
+
+   .btnAgregarAdmin{
+    margin: 50px;
+   }
