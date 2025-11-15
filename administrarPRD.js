@@ -7,7 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const API_URL = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`;
 
     const productsDomElement = document.querySelector('.listaProductosDelete');
-    
+    const productDomElementTitle = document.querySelector('.tituloAdmin');
+
+    const tituloMain = document.createElement('h1');
+    tituloMain.innerHTML = 'Administrar Productos';
+    const agregarBtn = document.createElement('button');
+    agregarBtn.innerHTML = 'Agregar Producto';
+    agregarBtn.setAttribute('onclick', 'window.location.href="./agregarPRD.html"');
+
+
+    productDomElementTitle.appendChild(tituloMain);
+    productDomElementTitle.appendChild(agregarBtn);
 
     //Funciones
 
@@ -16,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const tablaProd = crearTablaModificarEliminar(products);
         productsDomElement.appendChild(tablaProd);
     }
-
 
     function crearTablaModificarEliminar(products){
 
@@ -43,20 +52,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //Modificar
         const btnTdMod = document.createElement('td');
-        const btnModificar = document.createElement('a');
-        btnModificar.setAttribute('href', `./modificarPRDForm.html?code=${encodeURIComponent(product.id)}`);
+        const btnModificar = document.createElement('button');
+        btnModificar.onclick = () => {
+         window.location.href = `./modificarPRD.html?code=${encodeURIComponent(product.id)}`;
+        };
         btnModificar.textContent = 'Modificar';
-        btnModificar.setAttribute('class', 'botonGeneral');
+        //btnModificar.setAttribute('class', 'botonGeneral');
         btnTdMod.appendChild(btnModificar);
         filaProducto.appendChild(btnTdMod);
 
         //Eliminar
         const btnTdDel = document.createElement('td');
-        const btnEliminar = document.createElement('a');
+        const btnEliminar = document.createElement('button');
         btnEliminar.setAttribute('id', 'btnEliminar');
         btnEliminar.textContent = 'Eliminar';
         btnTdDel.appendChild(btnEliminar);
-        btnTdDel.setAttribute('class', 'botonGeneral');
+        //btnTdDel.setAttribute('class', 'botonGeneral');
         filaProducto.appendChild(btnTdDel);
         //Evento para eliminar producto
         btnEliminar.onclick = () => deleteProductsFromAirTable(product.id); 
@@ -66,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return newProductTable;
     }
-
 
 //Obtengo productos de AirTable
     async function getProductsFromAirTable() {
@@ -127,5 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     getProductsFromAirTable();
+
 
 })

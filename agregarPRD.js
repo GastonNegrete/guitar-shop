@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function agregarProductoNuevo() {
     
-        const nuevo = {
+        const nuevoProducto = {
         fields: datosForm()};
 
         try {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Authorization': `Bearer ${API_TOKEN}`,
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(nuevo)
+            body: JSON.stringify(nuevoProducto)
         });
 
         const prdNuevoJson = await response.json();

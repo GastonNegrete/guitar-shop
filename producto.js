@@ -272,6 +272,4 @@ document.addEventListener('DOMContentLoaded', () => {
     //Ejecuciones    
     getProductDetailInd()
 
-
-
 })

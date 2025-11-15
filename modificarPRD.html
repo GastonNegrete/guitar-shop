@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Modificar Producto</title>
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+<script type="module" src="./modificarPRD.js"></script>
 <body>
      <header class="barraHeader"> 
         <div>
@@ -17,7 +18,7 @@
             <a href="./index.html" class="linksNav">Inicio</a>
             <a href="./producto.html" class="linksNav">Productos</a>
             <a href="./nosotros.html" class="linksNav">Nosotros</a>
-            <a href="" class="linksNav">Modificar Producto</a>
+            <a href="" class="linksNav">Administrador</a>
             <a href="./carrito.html" class="linksNav linkCarritoResp">Carrito</a>
         </div>    
         <div>
@@ -36,15 +37,15 @@
             <form action="" method="">
                 <p>
                     <label for="name"></label>
-                    <input type="text" id="nombre" name="prd_nombre" placeholder="Nombre" class="datosForm"/>
+                    <input type="text" id="nombre" name="prd_nombre" placeholder="Nombre" class="datosForm" required/>
                 </p>
                 <p>
                     <label for="precio"></label>
-                    <input type="precio" id="precio" name="prd_precio" placeholder="Precio" class="datosForm"/>
+                    <input type="number" id="precio" name="prd_precio" placeholder="Precio" class="datosForm" required/>
                 </p>
                 <p>
                     <label for="categoria"></label>
-                    <input type="categoria" id="categoria" name="prd_categoria" placeholder="Categoria" class="datosForm"/>
+                    <input type="text" id="categoria" name="prd_categoria" placeholder="Categoria" class="datosForm" required/>
                 </p>
                 <p>
                     <label for="descripcion"></label>
@@ -72,7 +73,7 @@
                 </p>
                 <p>
                     <label for="marca"></label>
-                    <input id="marca" name="prd_marca" placeholder="Marca" class="datosForm"></input>
+                    <input id="marca" name="prd_marca" placeholder="Marca" class="datosForm" required/></input>
                 </p>
                 <p>
                     <label for="modelo"></label>
@@ -96,13 +97,14 @@
                 </p>
                 <p>
                     <label for="trastes"></label>
-                    <input id="traste" name="prd_trastes" placeholder="Trastes" class="datosForm"></input>
+                    <input type="number" id="traste" name="prd_trastes" placeholder="Trastes" class="datosForm" required/></input>
                 </p>
                 <p>
                     <label for="qty"></label>
-                    <input id="qty" name="prd_qty" placeholder="Cantidad" class="datosForm"></input>
+                    <input type="number" id="qty" name="prd_qty" placeholder="Cantidad" class="datosForm" required/></input>
                 </p>
-                <button class="botonEnviar">Modificar Producto</button>
+                <button class="botonEnviar" id="btnModificar">Modificar Producto</button>
+                <button class="botonEnviar" type="button" onclick="window.location.href='./administrarPRD.html'">Volver</button>
             </form> 
         </div>
     </main>
