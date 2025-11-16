@@ -6,11 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const TABLE_NAME = 'Products';
     const API_URL = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`;
 
+    const formulario = document.querySelector("form");
 
     async function agregarProductoNuevo() {
     
         const nuevoProducto = {
         fields: datosForm()};
+
+        if (!formulario.checkValidity()) {
+            formulario.reportValidity();
+            return;
+        }
 
         try {
             const response = await fetch(API_URL, {

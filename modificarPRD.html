@@ -57,7 +57,7 @@
                 </p>
                 <p>
                     <label for="modelo">Modelo : </label>
-                    <input id="modelo" name="prd_modelo" placeholder="Modelo" class="datosForm"></input>
+                    <input id="modelo" name="prd_modelo" placeholder="Modelo" class="datosForm" required/></input>
                 </p>
                 <p>
                     <label for="madera">Madera : </label>
@@ -77,13 +77,13 @@
                 </p>
                 <p>
                     <label for="trastes">Trastes : </label>
-                    <input type="number" id="traste" name="prd_trastes" placeholder="Trastes" class="datosForm" required/></input>
+                    <input type="number" id="traste" name="prd_trastes" placeholder="Trastes" class="datosForm"></input>
                 </p>
                 <p>
                     <label for="qty">Cantidad : </label>
                     <input type="number" id="qty" name="prd_qty" placeholder="Cantidad" class="datosForm" required/></input>
                 </p>
-                <button class="botonEnviar" id="btnModificar">Modificar Producto</button>
+                <button class="botonEnviar" id="btnModificar" type="submit">Modificar Producto</button>
                 <button class="botonEnviar" type="button" onclick="window.location.href='./administrarPRD.html'">Volver</button>
             </form> 
         </div>

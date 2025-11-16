@@ -99,9 +99,14 @@ document.addEventListener('DOMContentLoaded', () => {
             //Evento para eliminar producto
             btnEliminar.onclick = () => {
                 const carritoActual = JSON.parse(localStorage.getItem("carrito")) || [];
-                const nuevoCarrito = carritoActual.filter(item => item.id !== producto.id);
-                localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
-                renderCarritoCompleto();
+                const indiceCarrito = carritoActual.findIndex(item =>
+                item.id === producto.id);
+                
+                if (indiceCarrito !== -1) {
+                    carritoActual.splice(indiceCarrito, 1);
+                    localStorage.setItem("carrito", JSON.stringify(carritoActual));
+                    renderCarritoCompleto();
+                }
             };
 
             //Evento para vaciar carrito
@@ -240,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function mostrarToastCompra() {
-        const toast = document.getElementById('alerta-carrito');
+        const toast = document.getElementById('alerta-principal');
         toast.classList.add('mostrar');
         setTimeout(() => {
             toast.classList.remove('mostrar');

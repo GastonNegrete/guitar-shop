@@ -117,9 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
         })
 
         const newProductAnchor = document.createElement('a');
-        newProductAnchor.setAttribute('href', '#Descripcion');
+        newProductAnchor.setAttribute('href', './carrito.html');
         newProductAnchor.setAttribute('class', 'botonGeneral');
-        newProductAnchor.innerText = 'Ver Descripcion';
+        newProductAnchor.innerText = 'Finalizar Compra';
 
         const newUListProduct = document.createElement('ul');
         const newElementListProduct1 = document.createElement('li');

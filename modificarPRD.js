@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const TABLE_NAME = 'Products';
     const API_URL = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`;
 
+    const formulario = document.querySelector("form");
+
     function getProductFromURL() {
         const params = new URLSearchParams(window.location.search);
         return params.get('code');
@@ -87,6 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
             Trastes: parseInt(document.getElementById('traste').value),
             qty: parseInt(document.getElementById('qty').value)
         };
+
+          if (!formulario.checkValidity()) {
+            formulario.reportValidity();
+            return;
+            }
 
         try {
             const response = await fetch(`${API_URL}/${codigoProducto}`, {

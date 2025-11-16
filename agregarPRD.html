@@ -37,11 +37,11 @@
             <form action="" method="">
                 <p>
                     <label for="name"></label>
-                    <input type="text" id="nombre" name="prd_nombre" placeholder="Nombre" class="datosForm"/>
+                    <input type="text" id="nombre" name="prd_nombre" placeholder="Nombre" class="datosForm" required/>
                 </p>
                 <p>
                     <label for="precio"></label>
-                    <input type="number" id="precio" name="prd_precio" placeholder="Precio" class="datosForm"/>
+                    <input type="number" id="precio" name="prd_precio" placeholder="Precio" class="datosForm" required/>
                 </p>
                 <p>
                     <label for="descripcion"></label>
@@ -53,11 +53,11 @@
                 </p>
                 <p>
                     <label for="marca"></label>
-                    <input type="text" id="marca" name="prd_marca" placeholder="Marca" class="datosForm"></input>
+                    <input type="text" id="marca" name="prd_marca" placeholder="Marca" class="datosForm" required></input>
                 </p>
                 <p>
                     <label for="modelo"></label>
-                    <input type="text" id="modelo" name="prd_modelo" placeholder="Modelo" class="datosForm"></input>
+                    <input type="text" id="modelo" name="prd_modelo" placeholder="Modelo" class="datosForm" required></input>
                 </p>
                 <p>
                     <label for="madera"></label>
@@ -81,9 +81,9 @@
                 </p>
                 <p>
                     <label for="qty"></label>
-                    <input type="number" id="qty" name="prd_qty" placeholder="Cantidad" class="datosForm"></input>
+                    <input type="number" id="qty" name="prd_qty" placeholder="Cantidad" class="datosForm" required></input>
                 </p>
-                <button class="botonEnviar" type="button">Agregar Producto</button>
+                <button class="botonEnviar" type="submit">Agregar Producto</button>
                 <button class="botonEnviar" type="button" onclick="window.location.href='./administrarPRD.html'">Volver</button>
             </form>
         </div>    
