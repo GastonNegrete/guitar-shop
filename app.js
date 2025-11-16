@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
 
     //Info API
@@ -10,13 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
     //Elementos DOM
     const productsDomElement = document.querySelector('.productosPrincipal'); //DIV Padre de tarjeta productos
     const inputSearch = document.getElementById('input-search-product');
-    const categoryFilter = document.querySelectorAll('.opcionesFiltro');
+    const marcaFilter = document.querySelectorAll('.opcionesFiltro');
 
     // Lista para usar filtros
     let listProducts = [];
 
-    //Funciones
+    // Lista para filtrar si se aplica filtro de categoria
+    let filteredByMarca = [];
 
+    //Funciones
     function renderProducts(products){
         productsDomElement.innerHTML = '';
         products.forEach(product => {
@@ -25,13 +26,22 @@ document.addEventListener('DOMContentLoaded', () => {
     })}
 
     function filterProducts(text){
-        const productsFiltered = listProducts.filter(product => product.name.toLowerCase().includes(text.toLowerCase()));
+        let listaBusqueda;
+        // Si la lista de filtrado por marca esta con elementos, filtro en esta lista
+        if(filteredByMarca.length > 0){
+            listaBusqueda = filteredByMarca;
+        }else{
+            //SIno filtro en la lista de productos general
+            listaBusqueda = listProducts;
+        }
+        const productsFiltered = listaBusqueda.filter(product => product.name.toLowerCase().includes(text.toLowerCase()));
+
         return productsFiltered;
     }
 
-     function filterProductsByCategory(category){
-        const productsFiltered = listProducts.filter(product => product.category === category);
-        return productsFiltered;
+    function filterProductsByMarca(marca) {
+        filteredByMarca = listProducts.filter(product => product.marca.toLowerCase() === marca.toLowerCase());
+        return filteredByMarca;
     }
 
     function createProduct(product){
@@ -69,26 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return newProduct;
     }
 
-    // Eventos
-
-    inputSearch.addEventListener('keyup', (event) => {
-        const text = event.target.value;
-        const productsFiltered = filterProducts(text);
-        renderProducts(productsFiltered);
-    })
-
-    categoryFilter.forEach(link =>{
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const text = event.target.innerText.toLowerCase();
-            const productsFilteredCategory = filterProductsByCategory(text);
-            if (text === 'limpiar') {
-                renderProducts(listProducts);
-            }else{
-                renderProducts(productsFilteredCategory);
-            }
-    })})
-
     //Obtengo productos de AirTable
     async function getProductsFromAirTable() {
      
@@ -111,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: item.id,
             name: item.fields.Name,
             price: item.fields.Price,
-            category: item.fields.Category,
+            marca: item.fields.Marca,
             img: item.fields.Img
         }))
 
@@ -121,8 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
             id: item.id,
             name: item.fields.Name,
             price: item.fields.Price,
-            category: item.fields.Category,
-            img: item.fields.Img
+            img: item.fields.Img,
+            marca: item.fields.Marca
         }));
 
          
@@ -133,6 +123,26 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Error al intentar obtener productos de Air Table.')
         }
     }
+
+    // Eventos
+
+    inputSearch.addEventListener('keyup', (event) => {
+        const text = event.target.value;
+        const productsFiltered = filterProducts(text);
+        renderProducts(productsFiltered);
+    })
+
+    marcaFilter.forEach(link =>{
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const text = event.target.innerText.toLowerCase();
+            const productsFilteredMarca = filterProductsByMarca(text);
+            if (text === 'limpiar') {
+                renderProducts(listProducts);
+            }else{
+                renderProducts(productsFilteredMarca);
+            }
+    })})
 
     getProductsFromAirTable();
 

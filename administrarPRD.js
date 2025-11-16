@@ -10,9 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const productDomElementTitle = document.querySelector('.tituloAdmin');
 
     const tituloMain = document.createElement('h1');
+    tituloMain.setAttribute('class', 'titleAdminPRD');
     tituloMain.innerHTML = 'Administrar Productos';
     const agregarBtn = document.createElement('button');
-    agregarBtn.setAttribute('class', 'btnAgregarAdmin"');
+    agregarBtn.setAttribute('class', 'btnAgregarAdmin');
     agregarBtn.innerHTML = 'Agregar Producto';
     agregarBtn.setAttribute('onclick', 'window.location.href="./agregarPRD.html"');
 
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const newProductTable = document.createElement('table');
         newProductTable.setAttribute('class', 'tablaEliminar');
         //TD tabla
-        const etiquetas = ["Producto", "Precio", "Categoria", "Marca", "Modelo", "Color",  "Cantidad"];
+        const etiquetas = ["Producto", "Precio", "Marca", "Modelo", "Color",  "Cantidad"];
         const encabezadosTabla = document.createElement('tr');
         etiquetas.forEach(etiqueta => {
             const th = document.createElement('th');
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         products.forEach(product => {
         const filaProducto = document.createElement('tr');
-        const valores = [product.name, product.price, product.category, product.marca, product.modelo, product.color, product.qty];
+        const valores = [product.name, product.price, product.marca, product.modelo, product.color, product.qty];
         valores.forEach(val => {
             const td = document.createElement('td');
             td.textContent = val || '-';
@@ -100,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
             id: item.id,
             name: item.fields.Name,
             price: item.fields.Price,
-            category: item.fields.Category,
             img: item.fields.Img,
             marca: item.fields.Marca, 
             modelo: item.fields.Modelo, 
@@ -130,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const data = await response.json();
         console.log('Producto eliminado', data); 
+        mostrarToastEliminado();
         getProductsFromAirTable();
 
         } catch (error) {
@@ -137,7 +138,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    getProductsFromAirTable();
+    function mostrarToastEliminado() {
+        const toast = document.getElementById('alerta-principal');
+        toast.classList.add('mostrar');
+        setTimeout(() => {
+            toast.classList.remove('mostrar');
+        }, 3000);
+    }
 
+    getProductsFromAirTable();
 
 })

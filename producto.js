@@ -40,10 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
             price: data.fields.Price,
             category: data.fields.Category,
             img: data.fields.Img,
-            img0: data.fields.Img0,
-            img1: data.fields.Img1,
-            img2: data.fields.Img2,
-            img3: data.fields.Img3,
             qty: data.fields.qty,
             descripcion: data.fields.Descripcion,
             datosTabla: [data.fields.Marca, 
@@ -63,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.log('Error al intentar obtener productos de Air Table: ', error);
         }
-
     }
 
     function crearSeccionPrincipal(product){
@@ -74,8 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //Imagen individual
         const newImgInd = document.createElement('img');
-        newImgInd.setAttribute('src', product.img0);
-        newImgInd.setAttribute('class', 'imgProductoIndividual');
+        newImgInd.setAttribute('src', product.img);
+        newImgInd.setAttribute('class', 'tarjetaProductoIndividual');
         newImgInd.setAttribute('alt', product.name);
 
         //Flex tarjeta info
@@ -117,8 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
             carrito.push(objetoCarrito);
         }
 
-
         localStorage.setItem('carrito', JSON.stringify(carrito));
+        mostrarToastCarrito();
         })
 
         const newProductAnchor = document.createElement('a');
@@ -132,13 +127,10 @@ document.addEventListener('DOMContentLoaded', () => {
         newElementListProduct1.innerText = 'Tarjeta de credito s/interes';
         const newElementListProduct2 = document.createElement('li');
         newElementListProduct2.setAttribute('class','elementoLista')
-        newElementListProduct2.innerText = 'Envio gratuito para CABA y alrededores';
+        newElementListProduct2.innerText = 'Envios a todo el pais';
         const newElementListProduct3 = document.createElement('li');
         newElementListProduct3.setAttribute('class','elementoLista')
-        newElementListProduct3.innerText = 'Envios a todo el pais';
-        const newElementListProduct4 = document.createElement('li');
-        newElementListProduct4.setAttribute('class','elementoLista')
-        newElementListProduct4.innerText = 'Producto con garantia de fabrica.';
+        newElementListProduct3.innerText = 'Producto con garantia de fabrica.';
 
         const newElementQtyEtiqueta = document.createElement('p');
         newElementQtyEtiqueta.setAttribute('class','infoqty')
@@ -158,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
         newUListProduct.appendChild(newElementListProduct1);
         newUListProduct.appendChild(newElementListProduct2);
         newUListProduct.appendChild(newElementListProduct3);
-        newUListProduct.appendChild(newElementListProduct4);
 
         //Manejo cantidades
 
@@ -229,32 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return newTableSection;
     }
 
-    function crearSeccionImgs(product) {
-        const newImgSection = document.createElement('section');
-        newImgSection.setAttribute('class', 'bordesSeparadores');
-
-        const newImgTitle = document.createElement('h2');
-        newImgTitle.setAttribute('class', 'titulosProductoDetalle');
-        newImgTitle.innerText = 'Imagenes del Producto';
-
-        newImgSection.appendChild(newImgTitle);
-
-        //Iteracion para mostrar imagenes
-        for (let i = 1; i <= 3; i++) {
-        const src = product[`img${i}`];
-        if (src) {
-            const newImgDetalle = document.createElement('img');
-            newImgDetalle.setAttribute('src', src);
-            newImgDetalle.setAttribute('alt', product.name);
-            newImgDetalle.setAttribute('class', 'imgProductoDetalle');
-            newImgSection.appendChild(newImgDetalle);
-        }}  
-
-        return newImgSection;
-    }
-
     function crearSeccionDescripcion(product) {
-        const newParagraphSection = document.createElement('section');
+        const newParSection = document.createElement('section');
 
         const newParTitle = document.createElement('h2');
         newParTitle.setAttribute('class', 'titulosProductoDetalle');
@@ -265,16 +232,24 @@ document.addEventListener('DOMContentLoaded', () => {
         newTextDescription.setAttribute('class', 'parrafoDescripcionProducto');
         newTextDescription.innerText = product.descripcion;
 
-        newParagraphSection.appendChild(newParTitle);
-        newParagraphSection.appendChild(newTextDescription);
+        newParSection.appendChild(newParTitle);
+        newParSection.appendChild(newTextDescription);
 
-        return newParagraphSection;
+        return newParSection;
+    }
+
+    function mostrarToastCarrito() {
+        const toast = document.getElementById('alerta-carrito');
+        toast.classList.add('mostrar');
+
+        setTimeout(() => {
+            toast.classList.remove('mostrar');
+        }, 3000);
     }
 
     function renderProductDescription(product, section){
         section.appendChild(crearSeccionPrincipal(product));
         section.appendChild(crearSeccionTabla(product));
-        section.appendChild(crearSeccionImgs(product));
         section.appendChild(crearSeccionDescripcion(product));
     }
 

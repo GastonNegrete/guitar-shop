@@ -18,7 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
         datosFormulario.push(objetoForm);
         console.log("Formulario guardado:", datosFormulario);
         localStorage.setItem('datosFormulario', JSON.stringify(datosFormulario));
+        mostrarToastContacto();
         formulario.reset();
     })
+
+    function mostrarToastContacto() {
+        const toast = document.getElementById('alerta-principal');
+        toast.classList.add('mostrar');
+        setTimeout(() => {
+            toast.classList.remove('mostrar');
+        }, 3000);
+    }
 
 })

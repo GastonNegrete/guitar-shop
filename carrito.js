@@ -15,6 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
     function renderProductCarrito(carrito){
+
+        const contenedor = document.createElement('div');
+
+        if (carrito.length === 0) {
+            const mensaje = document.createElement('h3');
+            const btnProductos = document.createElement('a');
+            btnProductos.setAttribute('class', 'botonGeneral');
+            btnProductos.setAttribute('href', './index.html');
+            btnProductos.innerHTML = 'Ver Productos';
+            mensaje.textContent = 'Carrito vacío...';
+            mensaje.setAttribute('class', 'mensajeCarritoVacio');
+            contenedor.appendChild(mensaje);
+            contenedor.append(btnProductos);
+            return contenedor;
+        }
+
         const newProductTable = document.createElement('table');
         newProductTable.setAttribute('class', 'tablaEliminar');
         //TD tabla
@@ -197,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Vaciar carrito y confirmar
                 localStorage.setItem("carrito", JSON.stringify([]));
                 renderCarritoCompleto();
-                alert("¡Compra realizada con éxito!");
+                mostrarToastCompra();
 
             } catch (error) {
                 console.error("Error al finalizar la compra:", error);
@@ -221,6 +237,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         productsDomElement.appendChild(tabla);
         productsDomElementTotal.appendChild(resumen);
+    }
+
+    function mostrarToastCompra() {
+        const toast = document.getElementById('alerta-carrito');
+        toast.classList.add('mostrar');
+        setTimeout(() => {
+            toast.classList.remove('mostrar');
+        }, 3000);
     }
 
     renderCarritoCompleto();

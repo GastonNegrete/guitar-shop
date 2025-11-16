@@ -36,12 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
             id: data.id,
             name: data.fields.Name,
             price: data.fields.Price,
-            category: data.fields.Category,
             img: data.fields.Img,
-            img0: data.fields.Img0,
             img1: data.fields.Img1,
-            img2: data.fields.Img2,
-            img3: data.fields.Img3,
             qty: data.fields.qty,
             descripcion: data.fields.Descripcion,
             marca: data.fields.Marca, 
@@ -57,13 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             document.getElementById('nombre').value = mappedProduct.name || '';
             document.getElementById('precio').value = mappedProduct.price || '';
-            document.getElementById('categoria').value = mappedProduct.category || '';
             document.getElementById('descripcion').value = mappedProduct.descripcion || '';
             document.getElementById('img').value = mappedProduct.img || '';
-            document.getElementById('img0').value = mappedProduct.img0 || '';
-            document.getElementById('img1').value = mappedProduct.img1 || '';
-            document.getElementById('img2').value = mappedProduct.img2 || '';
-            document.getElementById('img3').value = mappedProduct.img3 || '';
             document.getElementById('marca').value = mappedProduct.marca || '';
             document.getElementById('modelo').value = mappedProduct.modelo || '';
             document.getElementById('madera').value = mappedProduct.madera || '';
@@ -85,13 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const fields = {
             Name: document.getElementById('nombre').value,
             Price: parseInt(document.getElementById('precio').value),
-            Category: document.getElementById('categoria').value,
             Descripcion: document.getElementById('descripcion').value,
             Img: document.getElementById('img').value,
-            Img0: document.getElementById('img0').value,
-            Img1: document.getElementById('img1').value,
-            Img2: document.getElementById('img2').value,
-            Img3: document.getElementById('img3').value,
             Marca: document.getElementById('marca').value,
             Modelo: document.getElementById('modelo').value,
             Madera: document.getElementById('madera').value,
@@ -114,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const prdModJson = await response.json();
         console.log('Producto modificado OK', prdModJson); 
+        mostrarToastModificado();
 
         //Limpio form despues de enviar OK
         document.querySelectorAll('.datosForm, .mensajeContacto').forEach(input => input.value = '');
@@ -125,6 +112,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     //Ejecuciones    
     getProductDetailInd()
+
+    function mostrarToastModificado() {
+        const toast = document.getElementById('alerta-principal');
+        toast.classList.add('mostrar');
+        setTimeout(() => {
+            toast.classList.remove('mostrar');
+        }, 3000);
+    }
 
     document.getElementById('btnModificar').addEventListener('click', function(e) {
     e.preventDefault();

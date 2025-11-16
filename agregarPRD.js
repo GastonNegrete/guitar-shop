@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const prdNuevoJson = await response.json();
         console.log('Producto cargado OK', prdNuevoJson); 
+        mostrarToastAgregado();
 
         //Limpio form despues de enviar OK
         document.querySelectorAll('.datosForm, .mensajeContacto').forEach(input => input.value = '');
@@ -39,13 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     return {
         Name: document.getElementById('nombre').value,
         Price: parseInt(document.getElementById('precio').value),
-        Category: document.getElementById('categoria').value,
         Descripcion: document.getElementById('descripcion').value,
         Img: document.getElementById('img').value,
-        Img0: document.getElementById('img0').value,
-        Img1: document.getElementById('img1').value,
-        Img2: document.getElementById('img2').value,
-        Img3: document.getElementById('img3').value,
         Marca: document.getElementById('marca').value,
         Modelo: document.getElementById('modelo').value,
         Madera: document.getElementById('madera').value,
@@ -56,6 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
         qty: parseInt(document.getElementById('qty').value)
     };
 }
+
+    function mostrarToastAgregado() {
+        const toast = document.getElementById('alerta-principal');
+        toast.classList.add('mostrar');
+        setTimeout(() => {
+            toast.classList.remove('mostrar');
+        }, 3000);
+    }
 
 document.querySelector('.botonEnviar').addEventListener('click', function(e) {
     e.preventDefault();
