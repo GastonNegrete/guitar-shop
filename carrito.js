@@ -88,14 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
             btnTd.appendChild(btnEliminar);
             filaProducto.appendChild(btnTd);
 
-            const btnTd2 = document.createElement('td');
-            const btnVaciarTd = document.createElement('a');
-            btnVaciarTd.setAttribute('class', 'botonGeneral');
-            btnVaciarTd.setAttribute('id', 'btnEliminar');
-            btnVaciarTd.textContent = 'Vaciar';
-            btnTd2.appendChild(btnVaciarTd);
-            filaProducto.appendChild(btnTd2);
-
             //Evento para eliminar producto
             btnEliminar.onclick = () => {
                 const carritoActual = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -107,13 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     localStorage.setItem("carrito", JSON.stringify(carritoActual));
                     renderCarritoCompleto();
                 }
-            };
-
-            //Evento para vaciar carrito
-            btnVaciarTd.onclick = () => {
-                const nuevoCarrito = [];
-                localStorage.setItem("carrito", JSON.stringify(nuevoCarrito));
-                renderCarritoCompleto();
             };
 
             newProductTable.appendChild(filaProducto);
@@ -138,6 +123,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const totalCarrito = document.createElement('p')
         totalCarrito.innerText = `$${totalCompra}`;
+
+        const btnVaciar = document.createElement('a');
+        btnVaciar.setAttribute('class', 'botonGeneral');
+        btnVaciar.setAttribute('id', 'btnEliminar');
+        btnVaciar.textContent = 'Vaciar Carrito';
+        btnVaciar.onclick = () => {localStorage.setItem("carrito", JSON.stringify([]));
+            renderCarritoCompleto();
+        };
 
         const botonFinalizar = document.createElement('a');
         botonFinalizar.href = ''; 
@@ -227,6 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
         divTotalCompra.appendChild(tituloResumen);
         divTotalCompra.appendChild(totalCarrito);
         divTotalCompra.appendChild(botonFinalizar);
+        divTotalCompra.appendChild(btnVaciar);
 
         return divTotalCompra;
     }
