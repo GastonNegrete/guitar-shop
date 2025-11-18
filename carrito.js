@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (sinStock.length > 0) {
-                alert(`No hay suficiente stock para: ${sinStock.map(p => p.name).join(', ')}`);
+                mostrarToastCompra(`No hay suficiente stock para: ${sinStock.map(p => p.name).join(', ')}`);
                 return;
             }
             // Actualizar stock en Airtable
@@ -205,13 +205,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         const resData = await response.json();
                         console.log("Respuesta PATCH:", resData);
                     }
-
                 }
 
                 // Vaciar carrito y confirmar
-                localStorage.setItem("carrito", JSON.stringify([]));
-                renderCarritoCompleto();
-                mostrarToastCompra();
+                if (carrito.length != 0) {
+                    localStorage.setItem("carrito", JSON.stringify([]));
+                    renderCarritoCompleto();
+                    mostrarToastCompra('Compra finalizada con exito');
+                }
+              //  localStorage.setItem("carrito", JSON.stringify([]));
+              //  renderCarritoCompleto();
+              //  mostrarToastCompra('Compra finalizada con exito');
 
             } catch (error) {
                 console.error("Error al finalizar la compra:", error);
@@ -238,8 +242,10 @@ document.addEventListener('DOMContentLoaded', () => {
         productsDomElementTotal.appendChild(resumen);
     }
 
-    function mostrarToastCompra() {
+    function mostrarToastCompra(mensaje) {
         const toast = document.getElementById('alerta-principal');
+        const mensajeToast = document.getElementById('toast-mensaje');
+        mensajeToast.textContent = mensaje;
         toast.classList.add('mostrar');
         setTimeout(() => {
             toast.classList.remove('mostrar');
