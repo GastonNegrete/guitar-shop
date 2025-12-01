@@ -4,7 +4,6 @@
     color: #222222;
 }
 
-
 /* Header */
 
 header{
@@ -225,7 +224,7 @@ a:visited{
 }
 
 .imgProductoIndividual{
-    width: 200px;
+    width: 500px;
     margin: 40px;
 }
 
@@ -608,8 +607,8 @@ footer{
     }
 
     .tarjetaProducto{
-        width: 450px;
-        height: 500px;
+        width: 350px;
+        height: 460px;
     }
 
     .botonesTarjetaProducto a{
@@ -843,7 +842,7 @@ footer{
 
     .tarjetaProducto{
         width: 300px;
-        height: 510px;
+        height: 450px;
     }
 
     .botonesTarjetaProducto a{
@@ -941,16 +940,22 @@ footer{
 @media (max-width: 768px) {
 
     .flexProductoIndividual{
-        flex-direction: column-reverse;
+        flex-direction: column;
         margin: 20px;
+    }
+
+    .flexTarjetaCompra{
+        text-align: center;
+        width: 100%;
     }
 
     .estiloTabla{
         width: 100%;
     }
 
-    .imgProductoDetalle{
+    .imgProductoIndividual{
         width: 300px;
+
     }
 
     #Caracteristicas{
@@ -968,6 +973,10 @@ footer{
 
    .parrafoDescripcionProducto{
     width: auto;
+   }
+
+   #cantidadSelect{
+    align-self: center;
    }
 
 }

@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //Imagen individual
         const newImgInd = document.createElement('img');
         newImgInd.setAttribute('src', product.img);
-        newImgInd.setAttribute('class', 'tarjetaProductoIndividual');
+        newImgInd.setAttribute('class', 'imgProductoIndividual');
         newImgInd.setAttribute('alt', product.name);
 
         //Flex tarjeta info
