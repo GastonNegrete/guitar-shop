@@ -293,18 +293,34 @@ td, th {
 
 }
 
-.tarjetaSinProducto{
-
+.contenedorCarrito{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--background-color-principal);
-    border: 1px solid #e5e5e5;
-    border-radius: 15px;
-    height: 500px;
-    width: 40%;
+    gap: 20px;
+}
 
+.tarjetaProductoCarrito{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    gap: 20px;
+}
+
+.nombreProductoCarrito{
+    flex: 2
+}
+
+.precioProductoCarrito{
+    flex: 2
+}
+
+.imgCarritoPrd{
+    align-self: center;
 }
 
 .tarjetaTotal{
@@ -649,6 +665,8 @@ footer{
     }
 }
 
+/* Nosotros */
+
 @media (max-width: 1024px) {
 
     .imgNosotrosTienda{
@@ -671,6 +689,8 @@ footer{
 
 }
 
+/* Carrito */
+
 @media (max-width: 1024px) {
 
     .flexCarrito{
@@ -687,10 +707,13 @@ footer{
     }
 
     .tarjetaTotal{
-        width: 600px;
+        width: 100%;
+        margin-top: 50px;
     }
 
 }
+
+/* Producto */
 
 @media (max-width: 1024px) {
 
@@ -889,7 +912,10 @@ footer{
 
     .flexCarrito{
         flex-direction: column;
+    }
 
+    .tarjetaProductoCarrito {
+        flex-direction: column;
     }
 
     .listaInfoCarrito{
@@ -904,6 +930,14 @@ footer{
     .tarjetaTotal{
         width: 300px;
     }
+
+    /* Oculto tabla y armo tarjetas por cada producto en carrito */
+
+  #btnEliminar {
+    align-self: flex-end;
+    margin-top: 0.5rem;
+  }
+
 
 }
 

@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const API_URL = `https://api.airtable.com/v0/${BASE_ID}/${TABLE_NAME}`;
 
     //Elementos DOM
-    const productsDomElement = document.querySelector('.tarjetaSinProducto');
-    const productsDomElementTotal = document.querySelector('.tarjetaTotal');
-  
+
+    const productsDomElement = document.querySelector('.tarjetasProductos');
+    const productsDomElementTotal = document.querySelector('.tarjetaTotal'); 
     //Obtengo productos en carrito
 
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderProductCarrito(carrito){
 
         const contenedor = document.createElement('div');
+        contenedor.setAttribute('class', 'contenedorCarrito')
 
         if (carrito.length === 0) {
             const mensaje = document.createElement('h3');
@@ -30,63 +31,41 @@ document.addEventListener('DOMContentLoaded', () => {
             contenedor.append(btnProductos);
             return contenedor;
         }
-
-        const newProductTable = document.createElement('table');
-        newProductTable.setAttribute('class', 'tablaEliminar');
-        //TD tabla
-        const etiquetas = ["Producto", "Precio", "Cantidad", "Imagen", "Subtotal"];
-
-       const encabezadosTabla = document.createElement('tr');
-        etiquetas.forEach(etiqueta => {
-            const th = document.createElement('th');
-            th.textContent = etiqueta;
-            encabezadosTabla.appendChild(th);
-        });
-        newProductTable.appendChild(encabezadosTabla);
-
+    
 
         carrito.forEach(producto => {
-            const filaProducto = document.createElement('tr');
+            const tarjetaProductoCarrito = document.createElement('div');
+            tarjetaProductoCarrito.setAttribute('class', 'tarjetaProductoCarrito');
+            
             // Nombre
-            const tdName = document.createElement('td');
-            tdName.textContent = producto.name;
-            filaProducto.appendChild(tdName);
+            const nombreProducto = document.createElement('p');
+            nombreProducto.setAttribute('class', 'nombreProductoCarrito');
+            nombreProducto.textContent = producto.name;
 
             // Precio
-            const tdPrice = document.createElement('td');
-            tdPrice.textContent = `$${producto.price}`;
-            filaProducto.appendChild(tdPrice);
+            const precioProducto= document.createElement('p');
+            precioProducto.setAttribute('class', 'precioProductoCarrito');
+            precioProducto.innerHTML = `<strong>Precio:</strong> $${producto.price}`;
 
             // Cantidad
-            const tdQty = document.createElement('td');
-            tdQty.textContent = producto.cantidad;
-            filaProducto.appendChild(tdQty);
+            const cantidadProducto = document.createElement('p');
+            cantidadProducto.innerHTML = `<strong>Cantidad:</strong> ${producto.cantidad}`;
 
             // Imagen
-            const tdImg = document.createElement('td');
             const img = document.createElement('img');
             img.src = producto.img;
             img.alt = producto.name;
             img.setAttribute('class', 'imgCarritoPrd')
-            tdImg.appendChild(img);
-            filaProducto.appendChild(tdImg);
 
-            const tdSubtotal = document.createElement('td');
-            if (producto.cantidad > 1){
-                tdSubtotal.textContent = `$${producto.price * producto.cantidad}`;
-            }else{
-                tdSubtotal.textContent = `$${producto.price}`
-            }
-            
-            filaProducto.appendChild(tdSubtotal);
+            const subtotal = document.createElement('p');
+            subtotal.setAttribute('class', 'precioProductoCarrito');
+            const total = producto.price * producto.cantidad;
+            subtotal.innerHTML = `<strong>Subtotal:</strong> $${total}`;
 
-            const btnTd = document.createElement('td');
             const btnEliminar = document.createElement('a');
             btnEliminar.setAttribute('class', 'botonGeneral');
             btnEliminar.setAttribute('id', 'btnEliminar');
             btnEliminar.textContent = 'Eliminar';
-            btnTd.appendChild(btnEliminar);
-            filaProducto.appendChild(btnTd);
 
             //Evento para eliminar producto
             btnEliminar.onclick = () => {
@@ -101,11 +80,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             };
 
-            newProductTable.appendChild(filaProducto);
+            tarjetaProductoCarrito.appendChild(img);
+            tarjetaProductoCarrito.appendChild(nombreProducto);
+            tarjetaProductoCarrito.appendChild(precioProducto);
+            tarjetaProductoCarrito.appendChild(cantidadProducto);
+            tarjetaProductoCarrito.appendChild(subtotal);
+            tarjetaProductoCarrito.appendChild(btnEliminar);
 
+            contenedor.appendChild(tarjetaProductoCarrito);
+            
         });
 
-        return newProductTable;
+        return contenedor;
     }
        
     function renderTotalCarrito(carrito){
@@ -235,10 +221,10 @@ document.addEventListener('DOMContentLoaded', () => {
         productsDomElement.innerHTML = "";
         productsDomElementTotal.innerHTML = "";
 
-        const tabla = renderProductCarrito(carrito);
+        const tarjetas = renderProductCarrito(carrito);
         const resumen = renderTotalCarrito(carrito);
 
-        productsDomElement.appendChild(tabla);
+        productsDomElement.appendChild(tarjetas);
         productsDomElementTotal.appendChild(resumen);
     }
 
