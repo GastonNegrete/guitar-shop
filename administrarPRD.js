@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const newProductTable = document.createElement('table');
         newProductTable.setAttribute('class', 'tablaEliminar');
         //TD tabla
-        const etiquetas = ["Producto", "Precio", "Marca", "Modelo", "Color",  "Cantidad"];
+        const etiquetas = ["Producto", "Precio", "Cant."];
         const encabezadosTabla = document.createElement('tr');
         etiquetas.forEach(etiqueta => {
             const th = document.createElement('th');
@@ -45,32 +45,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
         products.forEach(product => {
         const filaProducto = document.createElement('tr');
-        const valores = [product.name, product.price, product.marca, product.modelo, product.color, product.qty];
+        const valores = [product.name, product.price, product.qty];
         valores.forEach(val => {
             const td = document.createElement('td');
             td.textContent = val || '-';
             filaProducto.appendChild(td);
         });
 
+        const tdDivButtons = document.createElement('td');
+        const divButtons = document.createElement('div');
+
         //Modificar
-        const btnTdMod = document.createElement('td');
         const btnModificar = document.createElement('button');
+        btnModificar.setAttribute('class', 'btnAdmin');
         btnModificar.onclick = () => {
          window.location.href = `./modificarPRD.html?code=${encodeURIComponent(product.id)}`;
         };
         btnModificar.textContent = 'Modificar';
-        //btnModificar.setAttribute('class', 'botonGeneral');
-        btnTdMod.appendChild(btnModificar);
-        filaProducto.appendChild(btnTdMod);
 
         //Eliminar
-        const btnTdDel = document.createElement('td');
         const btnEliminar = document.createElement('button');
         btnEliminar.setAttribute('id', 'btnEliminar');
+        btnEliminar.setAttribute('class', 'btnAdmin');
         btnEliminar.textContent = 'Eliminar';
-        btnTdDel.appendChild(btnEliminar);
-        //btnTdDel.setAttribute('class', 'botonGeneral');
-        filaProducto.appendChild(btnTdDel);
+
+        //Contenedro Botones form AdminPRD
+        divButtons.appendChild(btnModificar);
+        divButtons.appendChild(btnEliminar);
+        tdDivButtons.appendChild(divButtons);
+        filaProducto.appendChild(tdDivButtons);
+
+
         //Evento para eliminar producto
         btnEliminar.onclick = () => deleteProductsFromAirTable(product.id); 
      
@@ -102,9 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
             name: item.fields.Name,
             price: item.fields.Price,
             img: item.fields.Img,
-            marca: item.fields.Marca, 
-            modelo: item.fields.Modelo, 
-            color: item.fields.Color,
             qty: item.fields.qty
         }))
          
