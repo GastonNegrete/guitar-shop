@@ -18,7 +18,7 @@
             <a href="./index.html" class="linksNav">Inicio</a>
             <a href="./producto.html" class="linksNav">Productos</a>
             <a href="./nosotros.html" class="linksNav">Nosotros</a>
-            <a href="" class="linksNav">Administrador</a>
+            <a href="./administrarPRD.html" class="linksNav">Administrador</a>
             <a href="./carrito.html" class="linksNav linkCarritoResp">Carrito</a>
         </div>    
         <div>
@@ -33,58 +33,60 @@
     </div>
     <main class="flexContacto">
         <div>
-            <h2>Modificar Producto</h2>
+            <h2 class="titulosAdminPRD">Modificar Producto</h2>
             <form action="" method="">
-                <p>
-                    <label for="name">Nombre : </label>
+                <p class="contenedorCamposForm">
+                    <label for="name" class="labelFormMod">Nombre : </label>
                     <input type="text" id="nombre" name="prd_nombre" placeholder="Nombre" class="datosForm" required/>
                 </p>
-                <p>
-                    <label for="precio">Precio : </label>
+                <p class="contenedorCamposForm">
+                    <label for="precio" class="labelFormMod">Precio : </label>
                     <input type="number" id="precio" name="prd_precio" placeholder="Precio" class="datosForm" required/>
                 </p>
-                <p>
-                    <label for="descripcion">Descripcion : </label>
+                <p class="contenedorCamposForm">
+                    <label for="descripcion" class="labelFormMod">Descripcion : </label>
                     <textarea id="descripcion" name="prd_descripcion" placeholder="Descripcion" class="mensajeContacto"></textarea>
                 </p>
-                <p>
-                    <label for="img">Img Tarjeta : </label>
+                <p class="contenedorCamposForm">
+                    <label for="img" class="labelFormMod">Img Tarjeta : </label>
                     <input id="img" name="prd_img" placeholder="IMG Principal" class="datosForm"></input>
                 </p>
-                <p>
-                    <label for="marca">Marca : </label>
+                <p class="contenedorCamposForm">
+                    <label for="marca" class="labelFormMod">Marca : </label>
                     <input id="marca" name="prd_marca" placeholder="Marca" class="datosForm" required/></input>
                 </p>
-                <p>
-                    <label for="modelo">Modelo : </label>
+                <p class="contenedorCamposForm">
+                    <label for="modelo" class="labelFormMod">Modelo : </label>
                     <input id="modelo" name="prd_modelo" placeholder="Modelo" class="datosForm" required/></input>
                 </p>
-                <p>
-                    <label for="madera">Madera : </label>
+                <p class="contenedorCamposForm">
+                    <label for="madera" class="labelFormMod">Madera : </label>
                     <input id="madera" name="prd_madera" placeholder="Madera" class="datosForm"></input>
                 </p>
-                <p>
-                    <label for="color">Color : </label>
+                <p class="contenedorCamposForm">
+                    <label for="color" class="labelFormMod">Color : </label>
                     <input id="color" name="prd_color" placeholder="Color" class="datosForm"></input>
                 </p>
-                <p>
-                    <label for="diapason">Diapason : </label>
+                <p class="contenedorCamposForm">
+                    <label for="diapason" class="labelFormMod">Diapason : </label>
                     <input id="diapason" name="prd_diapason" placeholder="Diapason" class="datosForm"></input>
                 </p>
-                <p>
-                    <label for="escala">Escala : </label>
+                <p class="contenedorCamposForm">
+                    <label for="escala" class="labelFormMod">Escala : </label>
                     <input id="escala" name="prd_escala" placeholder="Escala" class="datosForm"></input>
                 </p>
-                <p>
-                    <label for="trastes">Trastes : </label>
+                <p class="contenedorCamposForm">
+                    <label for="trastes" class="labelFormMod">Trastes : </label>
                     <input type="number" id="traste" name="prd_trastes" placeholder="Trastes" class="datosForm"></input>
                 </p>
-                <p>
-                    <label for="qty">Cantidad : </label>
+                <p class="contenedorCamposForm">
+                    <label for="qty" class="labelFormMod">Cantidad : </label>
                     <input type="number" id="qty" name="prd_qty" placeholder="Cantidad" class="datosForm" required/></input>
                 </p>
-                <button class="botonEnviar" id="btnModificar" type="submit">Modificar Producto</button>
-                <button class="botonEnviar" type="button" onclick="window.location.href='./administrarPRD.html'">Volver</button>
+                <div class="divButtonsForm">   
+                    <button class="botonEnviar" id="btnModificar" type="submit">Modificar Producto</button>
+                    <button class="botonEnviar" type="button" onclick="window.location.href='./administrarPRD.html'">Volver</button>
+                </div>
             </form> 
         </div>
     </main>

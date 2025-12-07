@@ -140,11 +140,13 @@ body{
 
 
 .botonGeneral{
+    text-align: center;
     padding: 10px;
     border: 1px solid #2222226c;
     border-radius: 20px;
     background-color: #FFFFFF;
     color: #041B15;
+    height: fit-content;
 }
 
 .botonGeneral:hover{
@@ -186,7 +188,6 @@ a:visited{
     border: 1px solid #e5e5e5;
     border-radius: 15px;
     background-color: #FFFFFF;
-
 }
 
 .botonesTarjetaProducto{
@@ -316,7 +317,7 @@ td, th {
 }
 
 .precioProductoCarrito{
-    flex: 2
+    flex: 3
 }
 
 .imgCarritoPrd{
@@ -377,9 +378,8 @@ td, th {
 }
 
 .botonEnviar{
-
-    margin: 45px 45px 45px 0;
-
+    margin: 10px;
+    width: fit-content;
 }
 
 /* Nosotros */
@@ -458,6 +458,11 @@ td, th {
 
 /* ABM */
 /* ADMINPRD */
+
+.titulosAdminPRD{
+    text-align: center;
+}
+
 .flexListaPrdDelete{
     display: flex;
     justify-content: space-around;
@@ -486,13 +491,32 @@ width: 80px;
         padding: 20px;
 }
 
-   .btnAgregarAdmin{
+.btnAgregarAdmin{
     margin: 20px;
     width: 100px;
 }
 
 .btnAdmin{
     margin: 5px;
+}
+
+/* Modificar PRD */
+
+.contenedorCamposForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.labelFormMod {
+    margin-bottom: 15px;
+}
+
+.divButtonsForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
 }
 
 /* Alertas */
@@ -759,11 +783,6 @@ footer{
         width: 700px;
     }
 
-    .botonEnviar{
-        margin: 45px;
-        width: 100px;
-    }
-
     iframe{
         width: 750px;
         margin-bottom: 30px;
@@ -1001,10 +1020,6 @@ footer{
         width: 300px;
     }
 
-    .botonEnviar{
-        margin: 45px;
-    }
-
     iframe{
         width: 350px;
         margin-bottom: 30px;
@@ -1040,7 +1055,6 @@ footer{
     /* Oculto tabla y armo tarjetas por cada producto en carrito */
 
   #btnEliminar {
-    align-self: flex-end;
     margin-top: 0.5rem;
   }
 
